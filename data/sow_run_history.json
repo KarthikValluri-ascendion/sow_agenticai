@@ -1,0 +1,2904 @@
+[
+  {
+    "run_id": "f1612095-ee3f-47fa-adcd-5bd302f5f11e",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-20T17:07:40.114657+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to conduct the assessment, but also involves human judgment and analysis to identify areas for improvement. The use of AI-powered tools to analyze data infrastructure performance would be an example of augmentation.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the implementation of automated alerts, which requires validation to ensure that the alerts are accurate and effective. The use of AI-powered monitoring tools to detect anomalies and trigger alerts would be an example of validation.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the refinement and optimization of existing configuration files, which requires human expertise and judgment to ensure that the changes are accurate and effective. The use of AI-powered tools to analyze and optimize configuration files would be an example of curation.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves the development of a framework, which requires human expertise and judgment to ensure that the framework is accurate and effective. The use of AI-powered tools to analyze and develop the framework would not be sufficient, as human oversight and review are necessary to ensure that the framework meets the required standards.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human communication and interaction, which requires a manual approach to ensure that the readout is effective and accurate.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to monitor and enforce adherence to AI Hygiene Guardrails, which requires validation to ensure that the tools are accurate and effective.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Utilize Isolated AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the use of AI-powered tools in a controlled environment, which requires curation to ensure that the tools are accurate and effective.",
+          "sow_evidence": "Governance: All Vendor SREs will utilize isolated, enterprise-approved AI environments"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human communication and interaction, which requires a manual approach to ensure that the warranty is effective and accurate.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The final handover readout requires human communication and interaction, but the use of AI-powered tools to analyze and develop the readout could potentially shift the MAVCA level to Augmented.",
+          "new_mavca_level": "Augmented",
+          "why": "The use of AI-powered tools to analyze and develop the readout could potentially augment the human communication and interaction, making the task more efficient and effective."
+        },
+        {
+          "task_id": "T6",
+          "constraint_assumption": "The maintenance of strict adherence to AI Hygiene Guardrails requires automated tools, but the use of human oversight and review could potentially shift the MAVCA level to Validated.",
+          "new_mavca_level": "Validated",
+          "why": "The use of human oversight and review could potentially validate the automated tools, ensuring that the adherence to AI Hygiene Guardrails is accurate and effective."
+        }
+      ],
+      "summary": "The Statement of Work (SOW) for the Project Oasis engagement outlines the scope of services, deliverables, and governance for the project. The tasks identified in the SOW can be classified into different MAVCA levels, including Manual, Augmented, Validated, Curated, and Autonomous. The classification shifts identified highlight the potential for changes in the MAVCA level based on different constraint assumptions.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "b35671de-fff9-498e-bbb8-a478bf27fb26",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-20T17:07:40.120712+00:00"
+  },
+  {
+    "run_id": "72a43517-add3-4fd3-93ca-fe8ab89cd025",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T01:04:53.963790+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to assess the reliability of the data infrastructure. While some aspects of the assessment may be automated, human judgment and expertise are necessary to interpret the results and identify areas for improvement. The use of AI-powered tools to analyze data and identify patterns can augment the assessment process, but human oversight and validation are still required.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves implementing automated alerts and monitoring systems to detect pipeline failures and latency bottlenecks. While the implementation of these systems can be automated, human validation is necessary to ensure that the alerts are accurate and effective. The use of AI-powered tools to analyze data and identify patterns can validate the alerts, but human oversight and review are still required.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves refactoring and optimizing configuration files, which requires a high degree of human expertise and judgment. While AI-powered tools can provide suggestions and recommendations, human curation is necessary to ensure that the changes are accurate and effective. The use of AI-powered tools can assist in the curation process, but human oversight and review are still required.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves developing a framework for AI hygiene guardrails, which requires a high degree of human expertise and judgment. While AI-powered tools can provide suggestions and recommendations, human curation is necessary to ensure that the framework is accurate and effective. The use of AI-powered tools can assist in the curation process, but human oversight and review are still required.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves conducting a final handover readout, which requires human interaction and communication. While AI-powered tools can provide some assistance, human manual effort is necessary to ensure that the handover is accurate and effective.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves maintaining strict adherence to AI hygiene guardrails, which requires human oversight and validation. While AI-powered tools can provide some assistance, human validation is necessary to ensure that the guardrails are effective and accurate.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Utilize Isolated Enterprise-Approved AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves utilizing isolated, enterprise-approved AI environments, which requires human oversight and validation. While AI-powered tools can provide some assistance, human validation is necessary to ensure that the environments are secure and effective.",
+          "sow_evidence": "Governance: Vendor operations will utilize isolated, enterprise-approved AI environments"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves providing unlimited warranty for third-party platforms, which requires human interaction and communication. While AI-powered tools can provide some assistance, human manual effort is necessary to ensure that the warranty is accurate and effective.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The final handover readout requires human interaction and communication, but the use of AI-powered tools can assist in the process.",
+          "new_mavca_level": "Augmented",
+          "why": "The use of AI-powered tools can assist in the final handover readout process, but human oversight and review are still required to ensure accuracy and effectiveness."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The implementation of observability alerts requires human validation, but the use of AI-powered tools can automate the process.",
+          "new_mavca_level": "Autonomous",
+          "why": "The use of AI-powered tools can automate the implementation of observability alerts, but human oversight and review are still required to ensure accuracy and effectiveness."
+        }
+      ],
+      "summary": "The project involves a short-term, specialized technical advisory to stabilize and optimize the client's core data orchestration and transformation workflows. The tasks involved require a range of human expertise and judgment, from manual effort to augmented and validated processes. The use of AI-powered tools can assist in the process, but human oversight and review are still required to ensure accuracy and effectiveness.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "b4e71e7b-507a-4078-8f63-b2ec6a24b75b",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T01:04:53.973459+00:00"
+  },
+  {
+    "run_id": "4dabf733-5949-4f8d-b500-0db8170600cb",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T01:12:50.609484+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Targeted Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment and optimization of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to assess and optimize the data infrastructure. While some automation may be involved, human judgment and expertise are necessary to interpret the results and make recommendations. The SOW mentions the deployment of a specialized task force of 4 Site Reliability Engineers (SREs) to conduct this assessment, indicating a high level of human involvement.",
+          "sow_evidence": "Scope of Services: Vendor will deploy a specialized task force of 4 Site Reliability Engineers (SREs). The team will conduct a targeted reliability assessment and optimization of the existing data infrastructure..."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the implementation of automated alerts, which can be validated through testing and verification. While some human oversight may be necessary, the primary work involves configuring and deploying automated tools. The SOW mentions the implementation of observability alerts, indicating a focus on automation and validation.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the refinement and optimization of existing configuration files, which requires human expertise and judgment. While some automation may be involved, the primary work involves manual review and editing of files. The SOW mentions the delivery of refactored and optimized configuration files, indicating a focus on human curation.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves the development of a custom framework, which requires human expertise and judgment. While some automation may be involved, the primary work involves manual review and development of the framework. The SOW mentions the delivery of a documented AI Hygiene Guardrails framework, indicating a focus on human development.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Weekly Steering Committee Meetings",
+          "description": "Conduct formal weekly steering committee meetings to review progress and discuss issues.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human interaction and discussion, which cannot be automated. The SOW mentions the waiver of formal weekly steering committees in favor of asynchronous Slack updates, indicating a shift away from traditional manual meetings.",
+          "sow_evidence": "Governance: Formal weekly steering committees are waived in favor of asynchronous Slack updates and a single mid-point review."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Utilize Isolated AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task involves the use of automated tools and environments to ensure data privacy and security. While some human oversight may be necessary, the primary work involves the deployment and management of autonomous AI environments. The SOW mentions the use of isolated AI environments, indicating a focus on automation and autonomy.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails. All Vendor SREs will utilize isolated, enterprise-approved AI environments..."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the provision of a warranty, which can be validated through testing and verification. While some human oversight may be necessary, the primary work involves the deployment and management of automated tools and processes. The SOW mentions the provision of an unlimited warranty, indicating a focus on validation and assurance.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human interaction and discussion, which cannot be automated. The SOW mentions the delivery of a final handover readout, indicating a focus on human communication and transfer of knowledge.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "Formal weekly steering committees are required.",
+          "new_mavca_level": "Manual",
+          "why": "If formal weekly steering committees are required, the task would involve human interaction and discussion, which cannot be automated. However, the SOW mentions the waiver of formal weekly steering committees in favor of asynchronous Slack updates, indicating a shift away from traditional manual meetings."
+        },
+        {
+          "task_id": "T6",
+          "constraint_assumption": "Isolated AI environments are not available.",
+          "new_mavca_level": "Augmented",
+          "why": "If isolated AI environments are not available, the task would involve human oversight and management of AI tools and processes, which would require augmentation. The SOW mentions the use of isolated AI environments, indicating a focus on automation and autonomy."
+        }
+      ],
+      "summary": "The SOW outlines a short-term, specialized technical advisory engagement under the Gamma Circle, prioritizing rapid, ad-hoc consulting with a focus on system reliability. The tasks involved range from manual to autonomous, with a focus on augmentation and validation. The classification shifts indicate that changes in constraints, such as the requirement for formal weekly steering committees or the availability of isolated AI environments, can impact the MAVCA level of the tasks.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "03c8c143-dad7-4c23-9448-98704888f5b9",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T01:12:50.613926+00:00"
+  },
+  {
+    "run_id": "fdf01b1c-79f3-4029-8a06-a84c60054cb2",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T01:17:34.003224+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the Site Reliability Engineers (SREs) to assess the current state of the data infrastructure and identify areas for improvement. The SREs will need to use their expertise and judgment to evaluate the performance of the Airflow DAGs, dbt Cloud, and Snowflake resources, and provide recommendations for optimization. The use of AI Hygiene Guardrails will ensure that the assessment is conducted in a secure and ethical manner.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks to ensure timely detection and resolution of issues.",
+          "mavca_level": "Augmented",
+          "rationale": "This task can be augmented with automated tools and scripts to implement observability alerts. The SREs can use existing tools and frameworks to set up alerts and notifications, reducing the need for manual effort. However, some manual configuration and customization may still be required to ensure that the alerts are tailored to the specific needs of the client.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Optimize Airflow DAGs and dbt Models",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models to improve performance and efficiency.",
+          "mavca_level": "Validated",
+          "rationale": "This task requires validation and testing to ensure that the optimized Airflow DAGs and dbt models meet the required performance and efficiency standards. The SREs will need to use automated testing tools and frameworks to validate the changes and ensure that they do not introduce any new issues or errors.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants, ensuring proprietary pipeline logic remains secure.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires curation and customization of the AI Hygiene Guardrails framework to ensure that it meets the specific needs and requirements of the client. The SREs will need to use their expertise and judgment to develop a framework that is tailored to the client's use case and ensures the security and integrity of the pipeline logic.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4 to ensure a smooth transition of knowledge and responsibilities.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the SREs to conduct a final handover readout and ensure that all necessary knowledge and responsibilities are transferred to the client. The SREs will need to use their expertise and judgment to identify the key areas of focus and ensure that the client is fully equipped to take over the responsibilities.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period to ensure data privacy, code security, and ethical tool usage.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task can be automated through the use of AI Hygiene Guardrails tools and frameworks, which can monitor and enforce compliance with the guardrails in real-time. The SREs can use automated tools to detect and prevent any violations of the guardrails, ensuring that the advisory period is conducted in a secure and ethical manner.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Provide Unlimited Warranty",
+          "description": "Provide unlimited warranty for all third-party platforms used during the advisory period.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the SREs to provide unlimited warranty for all third-party platforms used during the advisory period. The SREs will need to use their expertise and judgment to identify any issues or defects with the third-party platforms and provide support and maintenance as needed.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Conduct Weekly Slack Updates",
+          "description": "Conduct weekly Slack updates to ensure that the client is informed of progress and any issues that may arise.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the SREs to conduct weekly Slack updates and ensure that the client is informed of progress and any issues that may arise. The SREs will need to use their expertise and judgment to identify the key areas of focus and ensure that the client is fully informed.",
+          "sow_evidence": "Governance: Formal weekly steering committees are waived in favor of asynchronous Slack updates."
+        },
+        {
+          "task_id": "T9",
+          "task_name": "Conduct Mid-Point Review",
+          "description": "Conduct a mid-point review to ensure that the advisory period is on track and that any issues or concerns are addressed.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the SREs to conduct a mid-point review and ensure that the advisory period is on track. The SREs will need to use their expertise and judgment to identify any issues or concerns and develop a plan to address them.",
+          "sow_evidence": "Governance: A single mid-point review."
+        },
+        {
+          "task_id": "T10",
+          "task_name": "Maintain Project Documentation",
+          "description": "Maintain project documentation to ensure that all necessary information is recorded and easily accessible.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task can be automated through the use of project management tools and frameworks, which can automatically generate and update project documentation. The SREs can use automated tools to maintain project documentation, ensuring that all necessary information is recorded and easily accessible.",
+          "sow_evidence": "Project Management: The following personnel are authorized to make decisions regarding this SOW."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires a higher level of customization and tailoring of the AI Hygiene Guardrails framework.",
+          "new_mavca_level": "Curated",
+          "why": "The increased customization and tailoring requirements would necessitate a more curated approach to the AI Hygiene Guardrails framework, requiring the SREs to use their expertise and judgment to develop a framework that meets the client's specific needs."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The client has existing automated tools and frameworks for implementing observability alerts.",
+          "new_mavca_level": "Autonomous",
+          "why": "The existence of existing automated tools and frameworks would enable the implementation of observability alerts to be automated, reducing the need for manual effort and increasing the efficiency of the process."
+        }
+      ],
+      "summary": "The project involves a short-term, specialized technical advisory engagement to stabilize and optimize the client's core data orchestration and transformation workflows. The SREs will conduct a reliability assessment, implement observability alerts, optimize Airflow DAGs and dbt models, develop an AI Hygiene Guardrails framework, and conduct a final handover readout. The project will be governed by a minimalist governance package, with a focus on agility and flexibility.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=10",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=10"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 10,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "d22ae8d7-5cd8-4d0a-bb44-6e4c549ba08d",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T01:17:34.007921+00:00"
+  },
+  {
+    "run_id": "0b1608e5-5ad6-4a5d-a0ba-80b36c240660",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T01:48:19.108443+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Targeted Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment and optimization of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to assess and optimize the data infrastructure. While some automation may be involved, human judgment and expertise are necessary to interpret the results and make recommendations. The SOW mentions the deployment of a specialized task force of 4 Site Reliability Engineers (SREs) to conduct this assessment, indicating a high level of human involvement.",
+          "sow_evidence": "Scope of Services: Vendor will deploy a specialized task force of 4 Site Reliability Engineers (SREs). The team will conduct a targeted reliability assessment and optimization of the existing data infrastructure..."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the implementation of automated alerts, which can be validated through testing and verification. While some human oversight may be necessary, the primary work involves configuring and deploying automated tools. The SOW mentions the implementation of observability alerts, indicating a focus on automation and validation.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the refinement and optimization of existing configuration files, which requires human expertise and judgment. While some automation may be involved, the primary work involves manual review and editing of files. The SOW mentions the delivery of refactored and optimized configuration files, indicating a focus on human curation.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves the development of a custom framework, which requires human expertise and judgment. While some automation may be involved, the primary work involves manual review and development of the framework. The SOW mentions the delivery of a documented AI Hygiene Guardrails framework, indicating a focus on human development.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Weekly Steering Committee Meetings",
+          "description": "Conduct formal weekly steering committee meetings to review progress and discuss issues.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human interaction and discussion, which cannot be automated. The SOW mentions the waiver of formal weekly steering committees in favor of asynchronous Slack updates, indicating a shift away from traditional meeting formats.",
+          "sow_evidence": "Governance: Formal weekly steering committees are waived in favor of asynchronous Slack updates and a single mid-point review."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Utilize Isolated AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage.",
+          "mavca_level": "Augmented",
+          "rationale": "This task involves the use of automated tools and environments to ensure data privacy and security. While some human oversight may be necessary, the primary work involves the deployment and management of automated tools. The SOW mentions the use of isolated AI environments, indicating a focus on automation and augmentation.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails. All Vendor SREs will utilize isolated, enterprise-approved AI environments..."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the provision of a warranty, which can be validated through testing and verification. While some human oversight may be necessary, the primary work involves the deployment and management of automated tools. The SOW mentions the provision of an unlimited warranty, indicating a focus on validation and assurance.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human interaction and discussion, which cannot be automated. The SOW mentions the delivery of a final handover readout, indicating a focus on human communication and transfer of knowledge.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "Formal weekly steering committees are required.",
+          "new_mavca_level": "Autonomous",
+          "why": "If formal weekly steering committees were required, the task would involve more automation and less human interaction, shifting the MAVCA level to Autonomous."
+        },
+        {
+          "task_id": "T6",
+          "constraint_assumption": "Isolated AI environments are not available.",
+          "new_mavca_level": "Manual",
+          "why": "If isolated AI environments were not available, the task would require more human oversight and manual intervention, shifting the MAVCA level to Manual."
+        }
+      ],
+      "summary": "The SOW for the Project Oasis engagement involves a range of tasks, from conducting reliability assessments and implementing observability alerts to developing AI hygiene guardrails frameworks and providing unlimited warranties. The tasks require a mix of human expertise, automation, and validation, with a focus on augmentation and curation. The classification shifts highlight the importance of considering constraints and assumptions when determining the MAVCA level for each task.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "2d004504-1e09-445d-85ce-5b1db4187427",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T01:48:19.113327+00:00"
+  },
+  {
+    "run_id": "fefed4d5-4879-4308-bbaa-0b8943221fd4",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T06:33:40.836282+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment and optimization of the existing data infrastructure",
+          "mavca_level": "Augmented",
+          "rationale": "The task requires the use of specialized tools and expertise to assess and optimize the data infrastructure. While some aspects of the assessment may be automated, human judgment and expertise are necessary to interpret the results and make recommendations. The use of AI-powered tools to analyze data and identify potential issues is an example of augmented intelligence.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks",
+          "mavca_level": "Validated",
+          "rationale": "The implementation of observability alerts requires the use of automated tools and systems to monitor and detect issues. While the initial setup of these alerts may require human intervention, the ongoing monitoring and detection of issues can be automated. The use of automated tools to monitor and detect issues is an example of validated intelligence.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models",
+          "mavca_level": "Curated",
+          "rationale": "The refactoring and optimization of configuration files require human expertise and judgment to ensure that the changes are accurate and effective. While some aspects of the refactoring process may be automated, human review and validation are necessary to ensure that the changes meet the required standards. The use of human expertise to curate and refine the configuration files is an example of curated intelligence.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants",
+          "mavca_level": "Manual",
+          "rationale": "The development of an AI Hygiene Guardrails framework requires human expertise and judgment to ensure that the framework is accurate and effective. The use of human expertise to develop and refine the framework is an example of manual intelligence.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Weekly Steering Committee Meetings",
+          "description": "Conduct formal weekly steering committee meetings to review progress and discuss issues",
+          "mavca_level": "Manual",
+          "rationale": "The conduct of weekly steering committee meetings requires human interaction and discussion to review progress and discuss issues. The use of human expertise to facilitate and participate in these meetings is an example of manual intelligence.",
+          "sow_evidence": "Governance: Formal weekly steering committees are waived in favor of asynchronous Slack updates and a single mid-point review"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms",
+          "mavca_level": "Autonomous",
+          "rationale": "The provision of an unlimited warranty for third-party platforms can be automated through the use of contractual agreements and service level agreements. The use of automated systems to manage and track warranties is an example of autonomous intelligence.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period",
+          "mavca_level": "Validated",
+          "rationale": "The maintenance of strict adherence to AI Hygiene Guardrails requires the use of automated tools and systems to monitor and detect issues. While the initial setup of these tools may require human intervention, the ongoing monitoring and detection of issues can be automated. The use of automated tools to monitor and detect issues is an example of validated intelligence.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Utilize Isolated, Enterprise-Approved AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage",
+          "mavca_level": "Curated",
+          "rationale": "The utilization of isolated, enterprise-approved AI environments requires human expertise and judgment to ensure that the environments are accurate and effective. While some aspects of the utilization process may be automated, human review and validation are necessary to ensure that the environments meet the required standards. The use of human expertise to curate and refine the environments is an example of curated intelligence.",
+          "sow_evidence": "Governance: All Vendor SREs will utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period"
+        },
+        {
+          "task_id": "T9",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4",
+          "mavca_level": "Manual",
+          "rationale": "The conduct of a final handover readout requires human interaction and discussion to review progress and discuss issues. The use of human expertise to facilitate and participate in this readout is an example of manual intelligence.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        },
+        {
+          "task_id": "T10",
+          "task_name": "Manage Project Timeline and Resources",
+          "description": "Manage the project timeline and resources to ensure successful completion",
+          "mavca_level": "Augmented",
+          "rationale": "The management of the project timeline and resources requires the use of specialized tools and expertise to track and manage progress. While some aspects of the management process may be automated, human judgment and expertise are necessary to interpret the results and make decisions. The use of AI-powered tools to analyze data and identify potential issues is an example of augmented intelligence.",
+          "sow_evidence": "Timeline/Term: The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The project requires formal weekly steering committee meetings to review progress and discuss issues",
+          "new_mavca_level": "Manual",
+          "why": "The use of human expertise to facilitate and participate in these meetings is an example of manual intelligence. However, if the project were to adopt a more automated approach to governance, such as using AI-powered tools to analyze data and identify potential issues, the MAVCA level could shift to Augmented or Validated."
+        },
+        {
+          "task_id": "T7",
+          "constraint_assumption": "The project requires strict adherence to AI Hygiene Guardrails throughout the advisory period",
+          "new_mavca_level": "Autonomous",
+          "why": "The use of automated tools to monitor and detect issues related to AI Hygiene Guardrails could enable autonomous intelligence, where the system can automatically detect and respond to issues without human intervention."
+        }
+      ],
+      "summary": "The project requires a range of tasks to be completed, from conducting reliability assessments and implementing observability alerts, to refactoring and optimizing configuration files, and providing unlimited warranty for third-party platforms. The MAVCA levels for these tasks range from Manual to Autonomous, depending on the level of human expertise and judgment required. The project also requires strict adherence to AI Hygiene Guardrails and the use of isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=10",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=10"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 10,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "60b698e7-5c01-4bdc-8a7b-697a698be2f8",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T06:33:40.848603+00:00"
+  },
+  {
+    "run_id": "774bd99c-b2f9-4e36-b4e1-aaec19ab5b50",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T06:35:58.838282+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to conduct the assessment, but also involves human judgment and analysis to identify areas for improvement. The use of AI-powered tools to analyze data infrastructure performance is common, but human oversight is necessary to ensure accurate results and provide recommendations for optimization.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to implement alerts, but requires human validation to ensure that the alerts are accurate and effective. The implementation of observability alerts is a critical component of the reliability assessment, and human oversight is necessary to ensure that the alerts are properly configured and functioning as intended.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the use of automated tools to refactor and optimize configuration files, but requires human curation to ensure that the changes are accurate and effective. The refactoring and optimization of configuration files is a critical component of the reliability assessment, and human oversight is necessary to ensure that the changes are properly implemented and functioning as intended.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants, ensuring proprietary pipeline logic remains secure.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human expertise and judgment to develop a framework that meets the specific needs of the engineering team and ensures the security of proprietary pipeline logic. The development of an AI Hygiene Guardrails framework is a critical component of the reliability assessment, and human oversight is necessary to ensure that the framework is properly developed and implemented.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human expertise and judgment to conduct a final handover readout and ensure that all necessary information is transferred to the relevant stakeholders. The final handover readout is a critical component of the reliability assessment, and human oversight is necessary to ensure that the readout is properly conducted and all necessary information is transferred.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to monitor and enforce AI Hygiene Guardrails, but requires human validation to ensure that the guardrails are properly implemented and functioning as intended. The maintenance of AI Hygiene Guardrails is a critical component of the reliability assessment, and human oversight is necessary to ensure that the guardrails are properly implemented and functioning as intended.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Utilize Isolated, Enterprise-Approved AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to utilize isolated, enterprise-approved AI environments, but requires human validation to ensure that the environments are properly configured and functioning as intended. The use of isolated, enterprise-approved AI environments is a critical component of the reliability assessment, and human oversight is necessary to ensure that the environments are properly configured and functioning as intended.",
+          "sow_evidence": "Governance: All Vendor SREs will utilize isolated, enterprise-approved AI environments"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human expertise and judgment to provide unlimited warranty for third-party platforms and ensure that all necessary information is transferred to the relevant stakeholders. The provision of unlimited warranty is a critical component of the reliability assessment, and human oversight is necessary to ensure that the warranty is properly provided and all necessary information is transferred.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The final handover readout is conducted in a fully automated manner without human oversight.",
+          "new_mavca_level": "Autonomous",
+          "why": "If the final handover readout is conducted in a fully automated manner without human oversight, the task would shift from Manual to Autonomous. However, this would require significant changes to the current process and would likely require additional automation and validation to ensure that the readout is accurate and effective."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The implementation of observability alerts is conducted in a fully manual manner without the use of automated tools.",
+          "new_mavca_level": "Manual",
+          "why": "If the implementation of observability alerts is conducted in a fully manual manner without the use of automated tools, the task would shift from Validated to Manual. This would require significant changes to the current process and would likely result in a less efficient and effective implementation of observability alerts."
+        }
+      ],
+      "summary": "The Statement of Work (SOW) for the Gemini project outlines the scope of services, deliverables, and governance for a short-term, specialized technical advisory engagement. The SOW operates under a minimalist governance package and prioritizes rapid, ad-hoc consulting with a focus on system reliability. The tasks outlined in the SOW require a range of manual, augmented, validated, curated, and autonomous efforts to ensure the successful completion of the project.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "ed2b500c-c7ed-4028-aa72-8160e6f488ed",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T06:35:58.858427+00:00"
+  },
+  {
+    "run_id": "d61db23e-6ec9-4090-a172-3d2b4795efdb",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T06:47:12.759157+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to assess the reliability of the data infrastructure. While some automation may be used to collect data, the analysis and interpretation of the results will require human expertise and judgment, making it an Augmented task. The SOW evidence for this task is found in Section 1, Project Summary, where it states that the Vendor will provide short-term, specialized technical advisory to stabilize and optimize Client's core data orchestration and transformation workflows.",
+          "sow_evidence": "Section 1, Project Summary"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves implementing alerts and monitoring systems to detect pipeline failures and latency bottlenecks. While some automation may be used to implement the alerts, the validation of the alerts and the response to them will require human oversight and judgment, making it a Validated task. The SOW evidence for this task is found in Section 1, Scope of Services, where it states that the Vendor will implement observability alerts for pipeline failures and latency bottlenecks.",
+          "sow_evidence": "Section 1, Scope of Services"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves refactoring and optimizing configuration files, which requires a high level of expertise and judgment. The output of this task will be a curated set of configuration files that are tailored to the specific needs of the client, making it a Curated task. The SOW evidence for this task is found in Section 2, Deliverables, where it states that the Vendor will provide refactored and optimized configuration files for high-priority Airflow DAGs and dbt models.",
+          "sow_evidence": "Section 2, Deliverables"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants, ensuring proprietary pipeline logic remains secure.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves developing a framework for AI Hygiene Guardrails, which requires a high level of expertise and judgment. The output of this task will be a curated framework that is tailored to the specific needs of the client, making it a Curated task. The SOW evidence for this task is found in Section 2, Deliverables, where it states that the Vendor will provide a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "sow_evidence": "Section 2, Deliverables"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves conducting a final handover readout, which requires human interaction and communication. The task is not automatable and requires a high level of human expertise and judgment, making it a Manual task. The SOW evidence for this task is found in Section 2, Deliverables, where it states that the Vendor will provide a final handover readout at the end of week 4.",
+          "sow_evidence": "Section 2, Deliverables"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves maintaining strict adherence to AI Hygiene Guardrails, which requires ongoing validation and oversight. The task is not automatable and requires human expertise and judgment to ensure that the AI Hygiene Guardrails are being followed, making it a Validated task. The SOW evidence for this task is found in Section 1, Governance, where it states that the Vendor operations will maintain strict adherence to AI Hygiene Guardrails.",
+          "sow_evidence": "Section 1, Governance"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Utilize Isolated, Enterprise-Approved AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves utilizing isolated, enterprise-approved AI environments, which requires ongoing validation and oversight. The task is not automatable and requires human expertise and judgment to ensure that the AI environments are being used correctly, making it a Validated task. The SOW evidence for this task is found in Section 1, Governance, where it states that the Vendor operations will utilize isolated, enterprise-approved AI environments.",
+          "sow_evidence": "Section 1, Governance"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task involves providing an unlimited warranty for third-party platforms, which can be automated through contractual agreements and service level agreements. The task does not require human expertise or judgment, making it an Autonomous task. The SOW evidence for this task is found in Section 2, Deliverables, where it states that the Service Provider provides unlimited warranty for all third-party platforms.",
+          "sow_evidence": "Section 2, Deliverables"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires a more detailed handover readout, including a comprehensive review of the project's progress and outcomes.",
+          "new_mavca_level": "Augmented",
+          "why": "The additional requirement for a more detailed handover readout would require the use of specialized tools and expertise to collect and analyze data, making the task more Augmented in nature."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The client requires real-time monitoring and alerting for pipeline failures and latency bottlenecks.",
+          "new_mavca_level": "Autonomous",
+          "why": "The requirement for real-time monitoring and alerting would enable the use of automated tools and systems to detect and respond to pipeline failures and latency bottlenecks, making the task more Autonomous in nature."
+        }
+      ],
+      "summary": "The project involves a short-term, specialized technical advisory engagement to stabilize and optimize the client's core data orchestration and transformation workflows. The tasks involved in the project range from Manual to Autonomous, with most tasks requiring human expertise and judgment. The classification shifts highlight the potential for changes in the project's requirements and constraints, which could impact the MAVCA levels of the tasks.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "62aecc72-8920-4068-86ae-f5def64d616d",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T06:47:12.778485+00:00"
+  },
+  {
+    "run_id": "a717aa93-2331-4c5f-94f2-4fff58ce99eb",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T08:58:08.623666+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to conduct the assessment, but also involves human judgment and analysis to identify areas for improvement. The use of AI-powered tools to analyze data infrastructure performance would be an example of augmentation, as it would enhance the capabilities of the human assessors.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the implementation of automated alerts, which would require validation to ensure that they are functioning correctly and providing accurate notifications. The use of AI-powered monitoring tools to detect anomalies and trigger alerts would be an example of validation, as it would provide a check on the accuracy of the alerts.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires the use of specialized expertise to refactor and optimize configuration files, and would involve a high degree of human curation to ensure that the changes are accurate and effective. The use of AI-powered tools to analyze and optimize configuration files would be an example of curation, as it would provide a high degree of precision and accuracy.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants, ensuring proprietary pipeline logic remains secure.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the development of a framework for ensuring the security and integrity of AI-powered tools, and would require validation to ensure that it is effective and accurate. The use of AI-powered tools to analyze and detect potential security threats would be an example of validation, as it would provide a check on the accuracy of the framework.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human involvement and judgment to ensure that the handover is complete and accurate, and would not involve the use of AI-powered tools. The use of human facilitation to ensure a smooth handover would be an example of manual processing, as it would require human intervention and judgment.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of AI-powered tools to monitor and ensure compliance with AI Hygiene Guardrails, and would require validation to ensure that the tools are functioning correctly and accurately. The use of AI-powered monitoring tools to detect potential security threats would be an example of validation, as it would provide a check on the accuracy of the monitoring.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Utilize Isolated, Enterprise-Approved AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires the use of specialized expertise to ensure that the AI environments are properly isolated and secured, and would involve a high degree of human curation to ensure that the environments are accurate and effective. The use of AI-powered tools to analyze and optimize AI environments would be an example of curation, as it would provide a high degree of precision and accuracy.",
+          "sow_evidence": "Governance: All Vendor SREs will utilize isolated, enterprise-approved AI environments"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human involvement and judgment to ensure that the warranty is properly provided and managed, and would not involve the use of AI-powered tools. The use of human facilitation to ensure a smooth warranty process would be an example of manual processing, as it would require human intervention and judgment.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires a higher level of automation for the handover process",
+          "new_mavca_level": "Augmented",
+          "why": "If the client requires a higher level of automation for the handover process, the task would shift from manual to augmented, as it would involve the use of AI-powered tools to facilitate the handover."
+        },
+        {
+          "task_id": "T3",
+          "constraint_assumption": "The configuration files are highly complex and require a high degree of human expertise",
+          "new_mavca_level": "Validated",
+          "why": "If the configuration files are highly complex and require a high degree of human expertise, the task would shift from curated to validated, as it would require a higher degree of validation to ensure that the changes are accurate and effective."
+        }
+      ],
+      "summary": "The project involves a range of tasks that require different levels of automation and human involvement. The tasks include conducting a reliability assessment, implementing observability alerts, refactoring and optimizing configuration files, developing an AI Hygiene Guardrails framework, conducting a final handover readout, maintaining strict adherence to AI Hygiene Guardrails, utilizing isolated AI environments, and providing unlimited warranty for third-party platforms. The tasks are classified as manual, augmented, validated, or curated based on the level of automation and human involvement required.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "c92bd041-5046-4131-bbff-1a758226428a",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "last_run_crewai": "2026-04-21T08:58:08.641634+00:00"
+  },
+  {
+    "run_id": "451b0299-8162-431b-adc9-364d52dcf2e1",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T09:16:25.095980+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment and optimization of the existing data infrastructure",
+          "mavca_level": "Augmented",
+          "rationale": "The task requires the use of specialized tools and expertise to conduct the assessment, but the output will be a report that requires human review and validation. The use of Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation data will be analyzed using automated tools, but the interpretation of the results will require human judgment.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks",
+          "mavca_level": "Validated",
+          "rationale": "The implementation of observability alerts will require the use of automated tools, but the validation of the alerts will require human review to ensure that they are accurate and effective. The use of automated tools will reduce the likelihood of human error, but human judgment will be required to determine the appropriate thresholds for the alerts.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models",
+          "mavca_level": "Curated",
+          "rationale": "The refactoring of configuration files will require human expertise and judgment to determine the optimal configuration, but the use of automated tools will ensure that the changes are consistent and accurate. The output will be a set of optimized configuration files that can be used to improve the performance of the data infrastructure.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants",
+          "mavca_level": "Manual",
+          "rationale": "The development of the AI Hygiene Guardrails framework will require human expertise and judgment to determine the appropriate guidelines and procedures for the use of coding assistants. The output will be a document that requires human review and validation to ensure that it is accurate and effective.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Automated Compliance Scanning",
+          "description": "Conduct automated compliance scanning prior to the formal project kickoff meeting",
+          "mavca_level": "Autonomous",
+          "rationale": "The automated compliance scanning will be conducted using automated tools, and the output will be a report that indicates whether the project is compliant with the relevant regulations and standards. Human review and validation will not be required, as the output will be a straightforward indication of compliance or non-compliance.",
+          "sow_evidence": "Pre-Kickoff Compliance Gate: Managers shall run Automated Compliance Scanning prior to the formal project kickoff meeting"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Provide Final Handover Readout",
+          "description": "Provide a final handover readout at the end of week 4",
+          "mavca_level": "Manual",
+          "rationale": "The final handover readout will require human expertise and judgment to determine the appropriate content and format for the readout. The output will be a document that requires human review and validation to ensure that it is accurate and effective.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Manage Project Timeline",
+          "description": "Manage the project timeline to ensure that the project is completed on time",
+          "mavca_level": "Augmented",
+          "rationale": "The management of the project timeline will require the use of automated tools to track progress and identify potential delays, but human judgment will be required to determine the appropriate course of action to take in response to any delays or issues that arise.",
+          "sow_evidence": "Timeline/Term: The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Manage Project Resources",
+          "description": "Manage the project resources to ensure that the project is completed within budget",
+          "mavca_level": "Validated",
+          "rationale": "The management of the project resources will require the use of automated tools to track expenses and identify potential cost overruns, but human judgment will be required to determine the appropriate course of action to take in response to any cost overruns or issues that arise.",
+          "sow_evidence": "Resources and Cost: Estimated Contract Value: $60,000"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The project requires compliance with regulations that are subject to change",
+          "new_mavca_level": "Validated",
+          "why": "The automated compliance scanning will need to be validated by human experts to ensure that it is accurate and effective in identifying compliance issues, given the changing regulatory landscape."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The project requires the use of custom-built observability alerts",
+          "new_mavca_level": "Curated",
+          "why": "The implementation of custom-built observability alerts will require human expertise and judgment to determine the appropriate thresholds and parameters for the alerts, and the output will require human review and validation to ensure that it is accurate and effective."
+        }
+      ],
+      "summary": "The project requires a range of tasks to be completed, from conducting reliability assessments and implementing observability alerts, to refactoring configuration files and developing AI Hygiene Guardrails frameworks. The tasks will require a range of skills and expertise, from human judgment and expertise to automated tools and validation. The project timeline and resources will need to be carefully managed to ensure that the project is completed on time and within budget.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "37579cd1-19bf-4aec-92e9-1390ba4886bd",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 100.0,
+    "msa_consistency_status": "PASS",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "last_run_crewai": "2026-04-21T09:16:25.115590+00:00"
+  },
+  {
+    "run_id": "eca94ef2-5b83-4b02-beda-520353f8214a",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T09:23:47.576918+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to conduct the assessment, but also involves human judgment and analysis to identify areas for optimization. The use of AI-powered tools to analyze data infrastructure performance would be an example of augmentation.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to monitor and alert on pipeline performance, but also requires human validation to ensure that the alerts are accurate and relevant. The use of machine learning algorithms to detect anomalies in pipeline performance would be an example of validation.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the use of human expertise and judgment to refactor and optimize configuration files, with the goal of improving pipeline performance and reliability. The use of curated datasets and knowledge graphs to inform the refactoring process would be an example of curation.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the use of human expertise and judgment to develop a framework for ensuring the secure and ethical use of AI-powered tools, with the goal of protecting proprietary pipeline logic. The use of curated knowledge and best practices to inform the development of the framework would be an example of curation.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Automated Compliance Scanning",
+          "description": "Conduct automated compliance scanning prior to the formal project kickoff meeting.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task involves the use of automated tools to scan for compliance issues, with minimal human intervention required. The use of machine learning algorithms to detect compliance issues would be an example of autonomy.",
+          "sow_evidence": "Pre-Kickoff Compliance Gate: Managers shall run Automated Compliance Scanning prior to the formal project kickoff meeting."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Provide Final Handover Readout",
+          "description": "Provide a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves the use of human expertise and judgment to provide a final handover readout, with the goal of ensuring a smooth transition of knowledge and responsibilities. The use of manual processes and human communication to deliver the readout would be an example of manual task execution.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools and human validation to ensure that AI-powered tools are used in a secure and ethical manner, with the goal of protecting proprietary pipeline logic. The use of machine learning algorithms to detect anomalies in AI-powered tool usage would be an example of validation.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Utilize Isolated AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the use of human expertise and judgment to select and utilize isolated AI environments, with the goal of ensuring the secure and ethical use of AI-powered tools. The use of curated knowledge and best practices to inform the selection of AI environments would be an example of curation.",
+          "sow_evidence": "Governance: All Vendor SREs will utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires additional human oversight and validation of compliance scanning results.",
+          "new_mavca_level": "Validated",
+          "why": "The addition of human oversight and validation would shift the task from autonomous to validated, as human judgment and analysis would be required to validate the results of the compliance scanning."
+        },
+        {
+          "task_id": "T3",
+          "constraint_assumption": "The client requires the use of automated tools to refactor and optimize configuration files, with minimal human intervention.",
+          "new_mavca_level": "Augmented",
+          "why": "The use of automated tools to refactor and optimize configuration files would shift the task from curated to augmented, as the automated tools would augment human capabilities and reduce the need for human judgment and analysis."
+        }
+      ],
+      "summary": "This project involves a range of tasks, from conducting reliability assessments and implementing observability alerts, to refactoring configuration files and developing AI hygiene guardrails frameworks. The tasks require a range of skills and expertise, from human judgment and analysis to automated tool usage and machine learning algorithms. The project requires strict adherence to AI hygiene guardrails and the use of isolated AI environments to ensure the secure and ethical use of AI-powered tools.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "79ccd3c0-0f7f-457e-8a3a-ea028eeffe6d",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 100.0,
+    "msa_consistency_status": "PASS",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "PASS",
+    "go_ahead_override_applied": true,
+    "go_ahead_override_reason": "Data Quality is not much of a concern for now.\n",
+    "go_ahead_override_actor": "karthik.valluri@ascendion.com",
+    "last_run_crewai": "2026-04-21T09:25:36.539337+00:00"
+  },
+  {
+    "run_id": "16974bd0-7a4d-4129-83a0-bd584333a725",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T09:38:50.580929+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment and optimization of the existing data infrastructure",
+          "mavca_level": "Augmented",
+          "rationale": "The task requires the use of specialized tools and expertise to conduct the assessment, but the output will be a report that requires human review and validation. The use of Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation data will be analyzed using automated tools, but the interpretation of the results will require human judgment.",
+          "sow_evidence": "Scope of Services: Vendor will deploy a specialized task force of 4 Site Reliability Engineers (SREs). The team will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks",
+          "mavca_level": "Validated",
+          "rationale": "The task requires the use of automated tools to implement the alerts, but the configuration and testing of the alerts will require human validation to ensure they are working correctly. The use of automated tools will reduce the likelihood of human error, but human review is still necessary to ensure the alerts are accurate and effective.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models",
+          "mavca_level": "Curated",
+          "rationale": "The task requires the use of automated tools to refactor the configuration files, but the output will require human review and curation to ensure it meets the required standards. The use of automated tools will reduce the likelihood of human error, but human review is still necessary to ensure the configuration files are accurate and effective.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants",
+          "mavca_level": "Manual",
+          "rationale": "The task requires human expertise and judgment to develop the framework, as it involves creating a customized framework that meets the specific needs of the engineering team. The use of automated tools may be helpful in researching and gathering information, but the development of the framework will require human creativity and expertise.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Automated Compliance Scanning",
+          "description": "Conduct automated compliance scanning prior to the formal project kickoff meeting",
+          "mavca_level": "Autonomous",
+          "rationale": "The task can be fully automated using the DelEx AI engine, which can scan for compliance issues without human intervention. The use of automated tools will reduce the likelihood of human error and ensure that compliance issues are identified and addressed promptly.",
+          "sow_evidence": "Pre-Kickoff Compliance Gate (Mandatory): Managers shall run Automated Compliance Scanning prior to the formal project kickoff meeting"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Provide Weekly Status Updates",
+          "description": "Provide weekly status updates to the client using asynchronous Slack updates",
+          "mavca_level": "Manual",
+          "rationale": "The task requires human communication and judgment to provide updates that are relevant and useful to the client. The use of automated tools may be helpful in gathering information, but the creation and delivery of the updates will require human creativity and expertise.",
+          "sow_evidence": "Governance: Formal weekly steering committees are waived in favor of asynchronous Slack updates"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Maintain AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period",
+          "mavca_level": "Validated",
+          "rationale": "The task requires the use of automated tools to monitor and enforce AI Hygiene Guardrails, but human validation is necessary to ensure that the guardrails are effective and up-to-date. The use of automated tools will reduce the likelihood of human error, but human review is still necessary to ensure the guardrails are accurate and effective.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4",
+          "mavca_level": "Manual",
+          "rationale": "The task requires human communication and judgment to provide a readout that is relevant and useful to the client. The use of automated tools may be helpful in gathering information, but the creation and delivery of the readout will require human creativity and expertise.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires a higher level of human oversight for compliance scanning",
+          "new_mavca_level": "Validated",
+          "why": "The use of automated compliance scanning may not be sufficient to meet the client's requirements, and human validation is necessary to ensure that compliance issues are identified and addressed promptly."
+        },
+        {
+          "task_id": "T3",
+          "constraint_assumption": "The configuration files require a higher level of customization than initially anticipated",
+          "new_mavca_level": "Manual",
+          "why": "The use of automated tools may not be sufficient to meet the customization requirements, and human expertise is necessary to ensure that the configuration files are accurate and effective."
+        }
+      ],
+      "summary": "The project involves a range of tasks that require different levels of automation and human expertise. The use of automated tools can reduce the likelihood of human error and improve efficiency, but human review and validation are still necessary to ensure that the outputs are accurate and effective. The project requires a balanced approach that leverages the strengths of both automated tools and human expertise.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "0ea6789a-318e-487c-b327-0fe41ceb1e3b",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 100.0,
+    "msa_consistency_status": "PASS",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "RED",
+    "go_ahead_override_applied": false,
+    "go_ahead_override_reason": "",
+    "go_ahead_override_actor": "",
+    "last_run_crewai": "2026-04-21T09:38:51.102412+00:00"
+  },
+  {
+    "run_id": "aab08c93-b1d2-45e1-96c8-d2e24fda63f1",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "MSA.docx",
+    "project_name": "MSA.docx",
+    "timeline_raw": "",
+    "timeline_end_iso": null,
+    "estimated_contract_value": "",
+    "estimated_contract_value_numeric": null,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T09:42:27.993916+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Data Architecture and Ethics Gate Review",
+          "description": "Review of the client's data architecture and ethics gate to ensure compliance with Ascendion's standards and regulations.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires a thorough review of the client's data architecture and ethics gate, which involves complex decision-making and judgment. It is not possible to automate this task, and human intervention is necessary to ensure that the review is thorough and accurate. The reviewer must have expertise in data architecture and ethics to perform this task effectively.",
+          "sow_evidence": "Section 1.1 of the MSA, which defines the baseline commercial, legal, security, and governance terms, and Section 5.1, which requires the implementation of reasonable technical and organizational safeguards to protect client data."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Weekly Client Sentiment Analysis",
+          "description": "Analysis of the client's sentiment on a weekly basis to ensure that their needs are being met.",
+          "mavca_level": "Augmented",
+          "rationale": "This task can be augmented with automated tools to analyze the client's sentiment, but human intervention is still necessary to interpret the results and make decisions. The analysis requires a deep understanding of the client's needs and expectations, which cannot be fully automated.",
+          "sow_evidence": "Section 1.2 of the MSA, which incorporates the SOW by reference, and Section 2.2, which defines the acceptance criteria for deliverables."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Automated Compliance Scanning",
+          "description": "Automated scanning of the project's compliance with Ascendion's standards and regulations.",
+          "mavca_level": "Validated",
+          "rationale": "This task can be automated using tools such as the DelEx AI engine, which can scan the project's compliance with Ascendion's standards and regulations. However, human intervention is still necessary to validate the results and ensure that the project is compliant.",
+          "sow_evidence": "Section 6.1 of the MSA, which requires compliance checks and gates prior to production-impacting milestones."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "AI-Assisted Workflow Development",
+          "description": "Development of AI-assisted workflows to improve the efficiency and effectiveness of the project.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires the development of AI-assisted workflows, which involves the use of machine learning algorithms and data analytics. The development of these workflows requires human expertise and judgment to ensure that they are accurate and effective.",
+          "sow_evidence": "Section 5.2 of the MSA, which requires the implementation of AI hygiene and ethical-use guardrails when AI-assisted workflows are used."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Data Transformation and Integration",
+          "description": "Transformation and integration of data from various sources to support the project's objectives.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task can be automated using tools such as data transformation and integration software, which can perform the task without human intervention. The software can be programmed to transform and integrate the data according to predefined rules and protocols.",
+          "sow_evidence": "Section 4.1 of the MSA, which allows the use of third-party tools and services if they are listed or reasonably implied in the SOW."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Project Governance and Compliance",
+          "description": "Governance and compliance of the project to ensure that it meets Ascendion's standards and regulations.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human intervention to ensure that the project is governed and compliant with Ascendion's standards and regulations. The task involves complex decision-making and judgment, which cannot be fully automated.",
+          "sow_evidence": "Section 6.1 of the MSA, which requires compliance checks and gates prior to production-impacting milestones."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Client Communication and Stakeholder Management",
+          "description": "Communication and stakeholder management with the client to ensure that their needs are being met.",
+          "mavca_level": "Augmented",
+          "rationale": "This task can be augmented with automated tools to communicate with the client and stakeholders, but human intervention is still necessary to interpret the results and make decisions. The communication and stakeholder management require a deep understanding of the client's needs and expectations, which cannot be fully automated.",
+          "sow_evidence": "Section 2.2 of the MSA, which defines the acceptance criteria for deliverables."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Project Risk Management",
+          "description": "Management of risks associated with the project to ensure that they are mitigated and controlled.",
+          "mavca_level": "Validated",
+          "rationale": "This task can be automated using tools such as risk management software, which can identify and assess risks. However, human intervention is still necessary to validate the results and ensure that the risks are mitigated and controlled.",
+          "sow_evidence": "Section 11.1 of the MSA, which limits the liability of the parties for indirect, incidental, consequential, special, or punitive damages."
+        },
+        {
+          "task_id": "T9",
+          "task_name": "Quality Assurance and Testing",
+          "description": "Assurance and testing of the project's quality to ensure that it meets Ascendion's standards and regulations.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires the assurance and testing of the project's quality, which involves human expertise and judgment to ensure that the project meets Ascendion's standards and regulations.",
+          "sow_evidence": "Section 3.1 of the MSA, which warrants that the services will be performed in a professional and workmanlike manner."
+        },
+        {
+          "task_id": "T10",
+          "task_name": "Project Closure and Evaluation",
+          "description": "Closure and evaluation of the project to ensure that it has met its objectives and that the client is satisfied.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human intervention to ensure that the project is closed and evaluated properly. The task involves complex decision-making and judgment, which cannot be fully automated.",
+          "sow_evidence": "Section 12.1 of the MSA, which defines the term and termination of the agreement."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires that the data transformation and integration task be performed manually due to sensitive data involved.",
+          "new_mavca_level": "Manual",
+          "why": "The client's requirement for manual performance of the task due to sensitive data involved shifts the MAVCA level from Autonomous to Manual."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The client requires that the weekly client sentiment analysis be performed using a specific automated tool.",
+          "new_mavca_level": "Validated",
+          "why": "The client's requirement for the use of a specific automated tool shifts the MAVCA level from Augmented to Validated."
+        }
+      ],
+      "summary": "The project requires a range of tasks to be performed, from manual to autonomous, to ensure that the client's needs are met and that the project is compliant with Ascendion's standards and regulations. The tasks involve complex decision-making and judgment, which require human expertise and intervention. The use of automated tools and software can augment and validate the tasks, but human oversight and control are necessary to ensure that the project is successful.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=10",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=10"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 10,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "1650a8b0-bc22-481a-a6c8-4dbeeab28dea",
+    "record_type": "audit",
+    "sow_name_file": "MSA.docx",
+    "project_name": "MSA.docx",
+    "timeline_raw": "",
+    "timeline_end_iso": null,
+    "estimated_contract_value": "",
+    "estimated_contract_value_numeric": null,
+    "circle": "Alpha",
+    "sow_ready_score": 100.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "RED",
+    "go_ahead_override_applied": false,
+    "go_ahead_override_reason": "",
+    "go_ahead_override_actor": "",
+    "last_run_crewai": "2026-04-21T09:42:28.530808+00:00"
+  },
+  {
+    "run_id": "0ff0b39a-7d29-4da7-82e9-35cd8f6b7ae6",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T09:44:22.516564+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to conduct the assessment, but also involves human judgment and analysis to identify areas for improvement. The use of AI-powered tools to analyze data infrastructure performance would be an example of augmentation.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to monitor and alert on pipeline performance, but also requires human validation to ensure that the alerts are accurate and relevant. The use of AI-powered monitoring tools would be an example of validation.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the use of human expertise and judgment to refactor and optimize configuration files, with the goal of improving pipeline performance. The use of AI-powered tools to analyze and optimize configuration files would be an example of curation.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves the use of human expertise and judgment to develop a framework for AI hygiene guardrails, with the goal of ensuring the secure and ethical use of AI-powered tools. This task requires manual effort and expertise to develop the framework.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human communication and interaction to conduct the final handover readout, with the goal of ensuring a smooth transition of knowledge and responsibilities. This task requires manual effort and expertise to conduct the readout.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools and human validation to ensure that AI Hygiene Guardrails are being followed, with the goal of ensuring the secure and ethical use of AI-powered tools.",
+          "sow_evidence": "Governance: Crucially, Vendor operations will maintain strict adherence to AI Hygiene Guardrails."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Utilize Isolated, Enterprise-Approved AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools and human validation to ensure that AI environments are being used in a secure and ethical manner, with the goal of ensuring the protection of sensitive data and code.",
+          "sow_evidence": "Governance: All Vendor SREs will utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Manual",
+          "rationale": "This task involves human communication and interaction to provide warranty support, with the goal of ensuring that third-party platforms are functioning correctly and meeting the needs of the client. This task requires manual effort and expertise to provide warranty support.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires a more detailed handover readout, including additional documentation and training.",
+          "new_mavca_level": "Augmented",
+          "why": "The increased complexity of the handover readout would require the use of augmented tools and techniques to ensure that the readout is comprehensive and effective."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The client has a highly complex and customized pipeline infrastructure, requiring more advanced monitoring and alerting capabilities.",
+          "new_mavca_level": "Autonomous",
+          "why": "The increased complexity of the pipeline infrastructure would require the use of autonomous tools and techniques to ensure that monitoring and alerting are effective and efficient."
+        }
+      ],
+      "summary": "This project involves a short-term, specialized technical advisory engagement to stabilize and optimize the client's core data orchestration and transformation workflows. The project requires a range of tasks, from conducting reliability assessments and implementing observability alerts, to refactoring and optimizing configuration files and developing AI hygiene guardrails frameworks. The use of AI-powered tools and techniques will be critical to the success of the project, and will require careful consideration of the ethical and security implications of their use.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "77cd4509-226a-4fde-b801-996025815a39",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "RED",
+    "go_ahead_override_applied": false,
+    "go_ahead_override_reason": "",
+    "go_ahead_override_actor": "",
+    "last_run_crewai": "2026-04-21T09:44:23.003374+00:00"
+  },
+  {
+    "run_id": "c249e1d4-fc11-4607-9335-fa59a647fe0e",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T09:46:20.089466+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to conduct the assessment, but also involves human judgment and analysis to identify areas for improvement. The use of AI-powered tools to analyze data infrastructure performance is common in this type of assessment, but human oversight is still necessary to ensure accuracy and relevance of the findings.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to implement alerts, but also requires human validation to ensure that the alerts are accurate and relevant. The implementation of observability alerts is a critical component of the reliability assessment, and human oversight is necessary to ensure that the alerts are properly configured and functioning as intended.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Curated",
+          "rationale": "This task involves the use of automated tools to refactor and optimize configuration files, but also requires human curation to ensure that the changes are accurate and relevant. The refactoring and optimization of configuration files is a critical component of the reliability assessment, and human oversight is necessary to ensure that the changes are properly implemented and functioning as intended.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants, ensuring proprietary pipeline logic remains secure.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human expertise and judgment to develop a framework that meets the specific needs of the engineering team and ensures the security of proprietary pipeline logic. The development of an AI Hygiene Guardrails framework is a critical component of the reliability assessment, and human oversight is necessary to ensure that the framework is properly developed and implemented.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human expertise and judgment to conduct a final handover readout and ensure that all necessary information is transferred to the relevant stakeholders. The final handover readout is a critical component of the reliability assessment, and human oversight is necessary to ensure that the readout is properly conducted and all necessary information is transferred.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain Strict Adherence to AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to monitor and enforce adherence to AI Hygiene Guardrails, but also requires human validation to ensure that the guardrails are properly implemented and functioning as intended. The maintenance of strict adherence to AI Hygiene Guardrails is a critical component of the reliability assessment, and human oversight is necessary to ensure that the guardrails are properly implemented and functioning as intended.",
+          "sow_evidence": "Governance: Vendor operations will maintain strict adherence to AI Hygiene Guardrails"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Utilize Isolated, Enterprise-Approved AI Environments",
+          "description": "Utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves the use of automated tools to utilize isolated, enterprise-approved AI environments, but also requires human validation to ensure that the environments are properly configured and functioning as intended. The utilization of isolated, enterprise-approved AI environments is a critical component of the reliability assessment, and human oversight is necessary to ensure that the environments are properly configured and functioning as intended.",
+          "sow_evidence": "Governance: All Vendor SREs will utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Provide Unlimited Warranty for Third-Party Platforms",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires human expertise and judgment to provide unlimited warranty for third-party platforms and ensure that all necessary information is transferred to the relevant stakeholders. The provision of unlimited warranty for third-party platforms is a critical component of the reliability assessment, and human oversight is necessary to ensure that the warranty is properly provided and all necessary information is transferred.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The client requires a more detailed handover readout, including additional information on the reliability assessment and optimization of the data infrastructure.",
+          "new_mavca_level": "Augmented",
+          "why": "The additional requirements for the handover readout would necessitate the use of automated tools to gather and analyze the additional information, but would still require human oversight to ensure that the information is accurate and relevant."
+        },
+        {
+          "task_id": "T3",
+          "constraint_assumption": "The client requires a more rapid refactoring and optimization of the configuration files, with a shorter timeframe for completion.",
+          "new_mavca_level": "Autonomous",
+          "why": "The shorter timeframe for completion would necessitate the use of automated tools to refactor and optimize the configuration files, with minimal human oversight. The use of autonomous tools would enable the rapid completion of the task, but would also require careful monitoring to ensure that the changes are accurate and relevant."
+        }
+      ],
+      "summary": "The Statement of Work (SOW) for the Project Oasis engagement outlines the scope of services, deliverables, and governance for the project. The SOW requires the vendor to conduct a reliability assessment and optimization of the existing data infrastructure, implement observability alerts, refactor and optimize configuration files, develop an AI Hygiene Guardrails framework, and conduct a final handover readout. The SOW also requires the vendor to maintain strict adherence to AI Hygiene Guardrails and utilize isolated, enterprise-approved AI environments throughout the advisory period.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "cf0a5b69-91c8-485d-aebe-f690c9e76b7b",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "RED",
+    "go_ahead_override_applied": false,
+    "go_ahead_override_reason": "",
+    "go_ahead_override_actor": "",
+    "last_run_crewai": "2026-04-21T09:47:35.612039+00:00"
+  },
+  {
+    "run_id": "7ff781aa-48fa-4a6e-965f-2fe89fb5be7d",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T12:53:42.753304+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires a high level of expertise and human judgment to assess the reliability of the data infrastructure. While some automated tools may be used to collect data, the analysis and recommendations will require manual effort and expertise. The SOW emphasizes the need for a specialized task force of Site Reliability Engineers (SREs) to conduct this assessment, which further supports the Curated classification.",
+          "sow_evidence": "Scope of Services: Vendor will deploy a specialized task force of 4 Site Reliability Engineers (SREs). The team will conduct a targeted reliability assessment and optimization of the existing data infrastructure."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Augmented",
+          "rationale": "This task involves implementing automated alerts, which can be done using existing tools and frameworks. However, the configuration and customization of these alerts will require some manual effort and expertise. The SOW mentions the implementation of observability alerts, but does not provide detailed requirements, which suggests that some human judgment and expertise will be required.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves refactoring and optimizing configuration files, which can be done using automated tools and scripts. However, the validation and testing of these changes will require some manual effort and expertise to ensure that they are correct and functional. The SOW mentions the delivery of refactored and optimized configuration files, which suggests that some validation and testing will be required.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires a high level of expertise and human judgment to develop a framework for AI Hygiene Guardrails. While some automated tools may be used to support the development of this framework, the creation and customization of the framework will require manual effort and expertise. The SOW emphasizes the need for strict adherence to AI Hygiene Guardrails, which further supports the Curated classification.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Automated Compliance Scanning",
+          "description": "Conduct Automated Compliance Scanning prior to the formal project kickoff meeting.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task involves running an automated tool to conduct compliance scanning, which can be done without human intervention. The SOW mentions the requirement for Automated Compliance Scanning, which suggests that this task can be automated.",
+          "sow_evidence": "Pre-Kickoff Compliance Gate (Mandatory): Managers shall run Automated Compliance Scanning prior to the formal project kickoff meeting."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Provide Final Handover Readout",
+          "description": "Provide a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires a high level of human effort and expertise to provide a final handover readout. The readout will require the compilation and presentation of information, which will require manual effort and expertise. The SOW mentions the delivery of a final handover readout, which suggests that this task will require human intervention.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Manage Project Timeline",
+          "description": "Manage the project timeline, including the start and end dates, and ensure that the project is completed within the specified timeframe.",
+          "mavca_level": "Augmented",
+          "rationale": "This task involves managing the project timeline, which can be done using automated tools and frameworks. However, the monitoring and adjustment of the timeline will require some manual effort and expertise. The SOW mentions the project timeline and the need for management, which suggests that some human judgment and expertise will be required.",
+          "sow_evidence": "Timeline/Term: The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Manage Project Resources",
+          "description": "Manage the project resources, including the personnel and equipment, and ensure that they are allocated and utilized effectively.",
+          "mavca_level": "Validated",
+          "rationale": "This task involves managing the project resources, which can be done using automated tools and frameworks. However, the validation and optimization of the resource allocation will require some manual effort and expertise. The SOW mentions the resources and cost, which suggests that some validation and testing will be required.",
+          "sow_evidence": "Resources and Cost: # Role Location Start Date End Date Rate Cost"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The Automated Compliance Scanning tool is not available or is not functioning correctly.",
+          "new_mavca_level": "Manual",
+          "why": "If the Automated Compliance Scanning tool is not available or is not functioning correctly, the task will require manual effort and expertise to conduct the compliance scanning. This will shift the MAVCA level from Autonomous to Manual."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The implementation of observability alerts requires significant customization and configuration.",
+          "new_mavca_level": "Curated",
+          "why": "If the implementation of observability alerts requires significant customization and configuration, the task will require more human effort and expertise. This will shift the MAVCA level from Augmented to Curated."
+        }
+      ],
+      "summary": "The project involves a range of tasks, including conducting reliability assessments, implementing observability alerts, refactoring configuration files, and developing AI Hygiene Guardrails frameworks. The tasks have been classified according to their MAVCA levels, which range from Autonomous to Curated. The classification shifts highlight the potential changes in MAVCA levels due to changes in constraints or assumptions.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "45407a98-d3ae-4ee3-b37d-f1cebe2bc44a",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 100.0,
+    "msa_consistency_status": "PASS",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "PASS",
+    "go_ahead_override_applied": true,
+    "go_ahead_override_reason": "na",
+    "go_ahead_override_actor": "karthik.valluri@ascendion.com",
+    "last_run_crewai": "2026-04-21T12:58:26.183093+00:00"
+  },
+  {
+    "run_id": "a308353c-30cb-461a-85f5-5ba09b72d712",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "PO_miss.docx",
+    "project_name": "PO_miss.docx",
+    "timeline_raw": "",
+    "timeline_end_iso": null,
+    "estimated_contract_value": "",
+    "estimated_contract_value_numeric": null,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T12:59:20.591755+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "AI Model Fine-Tuning",
+          "description": "Fine-tune AI models for improved performance and autonomous release management",
+          "mavca_level": "Augmented",
+          "rationale": "The task requires human expertise to fine-tune AI models, but automated tools can assist in the process. The SOW mentions 'AI model fine-tuning and autonomous release management', indicating a need for human oversight and augmentation. The task is complex and requires a deep understanding of AI models and their applications, making it unsuitable for fully autonomous execution.",
+          "sow_evidence": "Line Items: 1. AI model fine-tuning and autonomous release management"
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Enterprise Chatbot Rollout",
+          "description": "Roll out enterprise chatbots and provide L3 production support",
+          "mavca_level": "Validated",
+          "rationale": "The task involves rolling out chatbots, which can be automated, but requires human validation to ensure the chatbots are functioning correctly and providing accurate responses. The SOW mentions 'Enterprise chatbot rollout and L3 production support', indicating a need for human validation and oversight. The task requires a balance between automation and human validation to ensure the chatbots meet the required standards.",
+          "sow_evidence": "Line Items: 2. Enterprise chatbot rollout and L3 production support"
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Data Platform Migration",
+          "description": "Accelerate data platform migration",
+          "mavca_level": "Curated",
+          "rationale": "The task involves migrating data platforms, which requires human curation to ensure data quality and integrity. The SOW mentions 'Data platform migration acceleration squad', indicating a need for human curation and oversight. The task requires a deep understanding of data platforms and migration processes, making it unsuitable for fully autonomous execution.",
+          "sow_evidence": "Line Items: 3. Data platform migration acceleration squad"
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Autonomous Release Management",
+          "description": "Manage autonomous release of AI models",
+          "mavca_level": "Autonomous",
+          "rationale": "The task involves managing the autonomous release of AI models, which can be fully automated. The SOW mentions 'autonomous release management', indicating a need for automated processes to manage the release of AI models. The task requires minimal human oversight, making it suitable for autonomous execution.",
+          "sow_evidence": "Line Items: 1. AI model fine-tuning and autonomous release management"
+        },
+        {
+          "task_id": "T5",
+          "task_name": "L3 Production Support",
+          "description": "Provide L3 production support for chatbots",
+          "mavca_level": "Validated",
+          "rationale": "The task involves providing L3 production support for chatbots, which requires human validation to ensure the chatbots are functioning correctly and providing accurate responses. The SOW mentions 'L3 production support', indicating a need for human validation and oversight. The task requires a balance between automation and human validation to ensure the chatbots meet the required standards.",
+          "sow_evidence": "Line Items: 2. Enterprise chatbot rollout and L3 production support"
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Invoice Management",
+          "description": "Manage invoices and billing",
+          "mavca_level": "Manual",
+          "rationale": "The task involves managing invoices and billing, which requires human intervention to ensure accuracy and compliance with financial regulations. The SOW mentions 'Invoice references are optional' and 'Billing can proceed before service completion', indicating a need for human oversight and manual processing.",
+          "sow_evidence": "Billing and Governance Notes"
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Scope and Rate Management",
+          "description": "Manage scope and rates",
+          "mavca_level": "Manual",
+          "rationale": "The task involves managing scope and rates, which requires human intervention to ensure accuracy and compliance with contractual agreements. The SOW mentions 'Scope and rates can be changed without formal change order', indicating a need for human oversight and manual processing.",
+          "sow_evidence": "Billing and Governance Notes"
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Compliance Scanning",
+          "description": "Perform automated compliance scanning",
+          "mavca_level": "Autonomous",
+          "rationale": "The task involves performing automated compliance scanning, which can be fully automated. The SOW does not explicitly mention compliance scanning, but it is a mandatory action according to the knowledge base. The task requires minimal human oversight, making it suitable for autonomous execution.",
+          "sow_evidence": "Knowledge Base: Mandatory Action: Compliance Gate"
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "Assuming the chatbots are functioning correctly and providing accurate responses",
+          "new_mavca_level": "Autonomous",
+          "why": "If the chatbots are functioning correctly and providing accurate responses, the task of providing L3 production support can be automated, reducing the need for human validation and oversight."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "Assuming the chatbot rollout is successful and the chatbots are functioning correctly",
+          "new_mavca_level": "Validated",
+          "why": "If the chatbot rollout is successful and the chatbots are functioning correctly, the task of rolling out chatbots can be validated, reducing the need for human intervention and oversight."
+        },
+        {
+          "task_id": "T1",
+          "constraint_assumption": "Assuming the AI models are fine-tuned and functioning correctly",
+          "new_mavca_level": "Augmented",
+          "why": "If the AI models are fine-tuned and functioning correctly, the task of fine-tuning AI models can be augmented, reducing the need for human intervention and oversight."
+        }
+      ],
+      "summary": "The SOW involves various tasks, including AI model fine-tuning, enterprise chatbot rollout, data platform migration, and autonomous release management. The tasks require different levels of human intervention, ranging from manual to autonomous. The classification shifts indicate that the tasks can be automated or validated under certain assumptions, reducing the need for human oversight and intervention.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=3"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=3"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 3,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "4170347a-90b7-4e2a-8a34-81ca313573c9",
+    "record_type": "audit",
+    "sow_name_file": "PO_miss.docx",
+    "project_name": "PO_miss.docx",
+    "timeline_raw": "",
+    "timeline_end_iso": null,
+    "estimated_contract_value": "",
+    "estimated_contract_value_numeric": null,
+    "circle": "Alpha",
+    "sow_ready_score": 0.0,
+    "msa_consistency_status": "PASS",
+    "po_consistency_status": "RED",
+    "po_conflict_count": 1,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "RED",
+    "go_ahead_override_applied": false,
+    "go_ahead_override_reason": "",
+    "go_ahead_override_actor": "",
+    "last_run_crewai": "2026-04-21T12:59:52.194565+00:00"
+  },
+  {
+    "run_id": "7e2dd04f-1df0-4c1c-a40d-1bb1a6a5d98f",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 100.0,
+    "last_run_crewai": "2026-04-21T13:21:41.904100+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Reliability Assessment",
+          "description": "Conduct a targeted reliability assessment of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the Site Reliability Engineers (SREs) to assess the current state of the data infrastructure and identify areas for improvement. The SREs will need to use their expertise and judgment to evaluate the performance of the Airflow DAGs, dbt Cloud, and Snowflake resources, and provide recommendations for optimization. The use of AI Hygiene Guardrails will ensure that the assessment is conducted in a secure and ethical manner.",
+          "sow_evidence": "Scope of Services: Vendor will conduct a targeted reliability assessment and optimization of the existing data infrastructure."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implement observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Augmented",
+          "rationale": "This task can be augmented with automated tools to implement observability alerts. The SREs can use existing monitoring tools to set up alerts for pipeline failures and latency bottlenecks, and use AI-powered tools to analyze the data and provide insights. However, human judgment is still required to configure the alerts and interpret the results.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactor and optimize configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Validated",
+          "rationale": "This task requires validation of the refactored and optimized configuration files to ensure they meet the required standards. The SREs can use automated tools to validate the configuration files, but human review and approval are still necessary to ensure that the changes are correct and effective.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Develop AI Hygiene Guardrails Framework",
+          "description": "Develop a documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires curation of the AI Hygiene Guardrails framework to ensure that it is tailored to the specific needs of the engineering team. The SREs can use existing frameworks and guidelines as a starting point, but human curation is necessary to ensure that the framework is relevant, accurate, and effective.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Conduct Final Handover Readout",
+          "description": "Conduct a final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the SREs to conduct a final handover readout and ensure that all deliverables are complete and satisfactory. Human interaction is necessary to ensure that the readout is effective and that all stakeholders are informed.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Maintain AI Hygiene Guardrails",
+          "description": "Maintain strict adherence to AI Hygiene Guardrails throughout the advisory period.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task can be automated to ensure that AI Hygiene Guardrails are maintained throughout the advisory period. Automated tools can monitor and enforce compliance with the guardrails, and alert human operators if any issues arise.",
+          "sow_evidence": "Governance: Crucially, Vendor operations will maintain strict adherence to AI Hygiene Guardrails."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Provide Unlimited Warranty",
+          "description": "Provide unlimited warranty for all third-party platforms.",
+          "mavca_level": "Validated",
+          "rationale": "This task requires validation of the warranty provided for all third-party platforms. Automated tools can be used to track and verify the warranty, but human review and approval are still necessary to ensure that the warranty is valid and effective.",
+          "sow_evidence": "Service Provider provides unlimited warranty for all third-party platforms."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Conduct Weekly Slack Updates",
+          "description": "Conduct weekly Slack updates to inform stakeholders of progress.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires manual effort from the SREs to conduct weekly Slack updates and ensure that stakeholders are informed of progress. Human interaction is necessary to ensure that the updates are effective and that all stakeholders are informed.",
+          "sow_evidence": "Governance: Formal weekly steering committees are waived in favor of asynchronous Slack updates."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "The final handover readout requires human interaction to ensure that all stakeholders are informed and that the readout is effective.",
+          "new_mavca_level": "Autonomous",
+          "why": "If the final handover readout can be automated, for example, by using AI-powered tools to generate a report, then the MAVCA level can be shifted to Autonomous. However, this would require significant changes to the current process and would likely require additional validation and testing to ensure that the automated report is accurate and effective."
+        },
+        {
+          "task_id": "T2",
+          "constraint_assumption": "The implementation of observability alerts requires human judgment to configure the alerts and interpret the results.",
+          "new_mavca_level": "Validated",
+          "why": "If the implementation of observability alerts can be validated using automated tools, for example, by using machine learning algorithms to analyze the data and provide insights, then the MAVCA level can be shifted to Validated. However, this would require significant changes to the current process and would likely require additional validation and testing to ensure that the automated tools are accurate and effective."
+        }
+      ],
+      "summary": "The Statement of Work (SOW) for the Project Oasis engagement outlines the scope of services, deliverables, and governance for the project. The SOW requires the Vendor to conduct a reliability assessment, implement observability alerts, refactor and optimize configuration files, develop an AI Hygiene Guardrails framework, and conduct a final handover readout. The MAVCA levels for each task range from Manual to Autonomous, depending on the level of human effort and judgment required. The classification shifts outline potential changes to the MAVCA levels based on changes to the constraints and assumptions.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": []
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "PASS",
+      "score": 100.0,
+      "missing_criteria": [],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": true,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "PASS"
+  },
+  {
+    "run_id": "472338a7-aae9-4af7-bdaf-367843d8ba6f",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 33.0,
+    "msa_consistency_status": "RED",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "RED",
+    "go_ahead_override_applied": false,
+    "go_ahead_override_reason": "",
+    "go_ahead_override_actor": "",
+    "last_run_crewai": "2026-04-21T13:23:22.525510+00:00"
+  }
+]

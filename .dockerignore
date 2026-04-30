@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv
+venv
+__pycache__
+*.pyc
+.env
+*.md
+!README.md
+.pytest_cache
+.mypy_cache
+.cursor
+terminals
+data/*.json
