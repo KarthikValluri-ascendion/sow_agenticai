@@ -9,3 +9,5 @@ venv/
 *.log
 .DS_Store
 data/sow_run_history.json
+knowledge_base/approved_sow/*
+!knowledge_base/approved_sow/.gitkeep

@@ -396,6 +396,7 @@ def run_audit_crew(
     kb_text: str | None = None,
     ethics_manual_text: str | None = None,
     progress: Callable[[str], None] | None = None,
+    retrieved_governance: str | None = None,
 ) -> dict[str, Any]:
     """
     Four sequential CrewAI runs (Agents 1–4) so the UI can update st.status between agents.
@@ -451,8 +452,13 @@ def run_audit_crew(
             f'"""\n{ethics_t}\n"""\n\n'
         )
 
+    retrieval_block = ""
+    if (retrieved_governance or "").strip():
+        retrieval_block = (retrieved_governance or "").strip() + "\n\n"
+
     task2 = Task(
         description=(
+            f"{retrieval_block}"
             "Framework v2.1: use the KNOWLEDGE BASE (matrix + classification rules). "
             "1) Assign exactly one Process Circle: Alpha, Beta, or Gamma — justify implicitly by matching "
             "engagement focus (strategic long-term vs rapid scaling vs ad-hoc short-term).\n"
@@ -471,8 +477,17 @@ def run_audit_crew(
             '  "required_deliverables": ["Core requirement / guardrail 1", "..."],\n'
             '  "deliverables_found": ["which requirement is covered and brief evidence"],\n'
             '  "deliverables_missing": ["..."],\n'
-            '  "status": "PASS" if every required_deliverables entry is substantially met else "RED"\n'
+            '  "status": "PASS" if every required_deliverables entry is substantially met else "RED",\n'
+            '  "evidence_sources": [\n'
+            "    {\n"
+            '      "source": "document path or label",\n'
+            '      "chunk_id": "chunk id from RETRIEVED block if used",\n'
+            '      "excerpt": "short excerpt",\n'
+            '      "reason": "why this source supports a finding"\n'
+            "    }\n"
+            "  ]\n"
             "}\n"
+            "evidence_sources is optional; include only entries grounded in the RETRIEVED GOVERNANCE EVIDENCE block or knowledge base when relevant.\n"
         ),
         expected_output="JSON with process_circle, required_deliverables, found/missing, status PASS or RED.",
         agent=agent2,

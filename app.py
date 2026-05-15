@@ -26,12 +26,22 @@ from env_config import (
 load_dotenv_and_resolve()
 
 from audit_crew import run_audit_crew, run_remediation_crew
+from approved_sow_archive import archive_approved_sow_text
 from phase_agents import (
     run_data_quality_precheck,
     run_mavca_decomposition,
     run_msa_consistency_check,
     run_po_sow_consistency_check,
     validate_phase1b_mavca,
+)
+from rag_store import (
+    STEP_QUERIES,
+    build_corpus,
+    corpus_fingerprint,
+    format_retrieved_context,
+    merge_chunks_unique,
+    rag_evidence_rows,
+    retrieve,
 )
 from redaction import redact_docx_bytes
 
@@ -153,6 +163,10 @@ def _init_session() -> None:
     st.session_state.manual_go_ahead_reason = ""
     st.session_state.manual_go_ahead_actor = ""
     st.session_state.last_audit_run_id = ""
+    st.session_state.insights_sow_plaintext = ""
+    st.session_state.rag_retrieval_by_step = {}
+    st.session_state.rag_corpus_fingerprint = ""
+    st.session_state.rag_archive_done_run_id = ""
 
 
 def _tl_emoji(status: str) -> str:
@@ -300,7 +314,7 @@ def _build_run_record(sow_name_file: str, sow_text: str, audit_result: dict[str,
     cost_display, cost_value = extract_estimated_contract_value(sow_text)
     run_id = str(uuid.uuid4())
     base_go_ahead = bool(audit_result.get("executive_go_ahead", False))
-    return {
+    row: dict[str, Any] = {
         "run_id": run_id,
         "record_type": "audit",
         "sow_name_file": sow_name_file or "",
@@ -330,6 +344,14 @@ def _build_run_record(sow_name_file: str, sow_text: str, audit_result: dict[str,
         "go_ahead_override_actor": "",
         "last_run_crewai": now_iso_utc(),
     }
+    for opt_key in (
+        "rag_corpus_fingerprint",
+        "rag_chunk_ids_by_step",
+        "approved_sow_archive_path",
+    ):
+        if opt_key in audit_result:
+            row[opt_key] = audit_result[opt_key]
+    return row
 
 
 def _build_phase1b_run_record(
@@ -660,6 +682,10 @@ div[data-testid="stAlert"] {
         st.session_state.manual_go_ahead_reason = ""
         st.session_state.manual_go_ahead_actor = ""
         st.session_state.last_audit_run_id = ""
+        st.session_state.insights_sow_plaintext = ""
+        st.session_state.rag_retrieval_by_step = {}
+        st.session_state.rag_corpus_fingerprint = ""
+        st.session_state.rag_archive_done_run_id = ""
 
     st.session_state.sow_bytes = classified.get("sow_bytes")
     st.session_state.sow_name = classified.get("sow_name")
@@ -690,6 +716,7 @@ div[data-testid="stAlert"] {
             st.session_state.manual_go_ahead_override = False
             st.session_state.manual_go_ahead_reason = ""
             st.session_state.manual_go_ahead_actor = ""
+            st.session_state.rag_archive_done_run_id = ""
             text = read_docx_text(st.session_state.sow_bytes)
             run_data_quality_guard(text)
             with st.status("Running unified governance workflow...", expanded=True) as status_box:
@@ -697,12 +724,59 @@ div[data-testid="stAlert"] {
                     st.write(msg)
 
                 try:
+                    st.session_state.insights_sow_plaintext = text
+                    rag_chunks = build_corpus(
+                        kb_text=kb_text,
+                        ethics_text=ethics_text,
+                        msa_text=msa_text,
+                        po_text=po_text,
+                        sow_text=text,
+                        sow_source_label=st.session_state.sow_name or "sow.docx",
+                        root=ROOT,
+                    )
+                    fp = corpus_fingerprint(rag_chunks)
+                    st.session_state.rag_corpus_fingerprint = fp
+
+                    ch_pc = retrieve(STEP_QUERIES["process_circle"], rag_chunks, 6)
+                    ch_gov = retrieve(
+                        "PII confidential privacy security controls data handling governance",
+                        rag_chunks,
+                        4,
+                    )
+                    ch_a2 = merge_chunks_unique([ch_pc, ch_gov], top_k=8)
+                    gov_a2 = format_retrieved_context(ch_a2).strip() or None
+
+                    ch_mv = retrieve(STEP_QUERIES["mavca"], rag_chunks, 8)
+                    gov_mavca = format_retrieved_context(ch_mv).strip() or None
+
+                    msa_rag = rag_evidence_rows(
+                        retrieve(STEP_QUERIES["msa"], rag_chunks, 5),
+                        reason="Lexical match for MSA / legal alignment",
+                    )
+                    po_rag = rag_evidence_rows(
+                        retrieve(STEP_QUERIES["po"], rag_chunks, 5),
+                        reason="Lexical match for PO / commercial alignment",
+                    )
+                    st.session_state.rag_retrieval_by_step = {
+                        "process_circle": rag_evidence_rows(
+                            ch_a2,
+                            reason="Process circle, governance, and hygiene retrieval",
+                        ),
+                        "mavca": rag_evidence_rows(
+                            ch_mv,
+                            reason="MAVCA and task-intelligence retrieval",
+                        ),
+                        "msa": msa_rag,
+                        "po": po_rag,
+                    }
+
                     st.write("Step 1/4: SOW insights")
                     st.session_state.audit_result = run_audit_crew(
                         text,
                         kb_text=kb_text,
                         ethics_manual_text=ethics_text or None,
                         progress=progress,
+                        retrieved_governance=gov_a2,
                     )
                     ar = st.session_state.audit_result
                     if isinstance(ar, dict) and "error" not in ar:
@@ -710,6 +784,8 @@ div[data-testid="stAlert"] {
                         msa_result: dict[str, Any] | None = None
                         if msa_text.strip():
                             msa_result = run_msa_consistency_check(text, msa_text)
+                            if isinstance(msa_result, dict):
+                                msa_result = {**msa_result, "retrieved_evidence": msa_rag}
                         else:
                             msa_result = {
                                 "status": "PASS",
@@ -717,6 +793,7 @@ div[data-testid="stAlert"] {
                                 "conflicts": [],
                                 "review_flags": [],
                                 "conflict_count": 0,
+                                "retrieved_evidence": msa_rag,
                             }
                         st.session_state.msa_consistency_result = msa_result
                         ar["msa_consistency"] = msa_result
@@ -725,6 +802,8 @@ div[data-testid="stAlert"] {
                         po_result: dict[str, Any]
                         if po_text.strip():
                             po_result = run_po_sow_consistency_check(text, po_text)
+                            if isinstance(po_result, dict):
+                                po_result = {**po_result, "retrieved_evidence": po_rag}
                         else:
                             po_result = {
                                 "status": "PASS",
@@ -745,6 +824,7 @@ div[data-testid="stAlert"] {
                                 "review_flags": [],
                                 "recommendations": [],
                                 "conflict_count": 0,
+                                "retrieved_evidence": po_rag,
                             }
                         st.session_state.po_consistency_result = po_result
                         ar["po_consistency"] = po_result
@@ -755,6 +835,7 @@ div[data-testid="stAlert"] {
                             kb_text=kb_text,
                             ethics_text=ethics_text or None,
                             progress=progress,
+                            retrieved_governance=gov_mavca,
                         )
                         gate_result = validate_phase1b_mavca(mavca_result if isinstance(mavca_result, dict) else {})
                         st.session_state.mavca_result = mavca_result
@@ -769,6 +850,12 @@ div[data-testid="stAlert"] {
                         )
 
                         st.write("Step 5/5: Persisting audit run + notifying stakeholders")
+                        ar["rag_corpus_fingerprint"] = fp
+                        ar["rag_chunk_ids_by_step"] = {
+                            k: [x.get("chunk_id") for x in v if isinstance(x, dict) and x.get("chunk_id")]
+                            for k, v in st.session_state.rag_retrieval_by_step.items()
+                            if isinstance(v, list)
+                        }
                         run_record = _build_run_record(st.session_state.sow_name or "", text, ar)
                         append_run_history(run_record)
                         st.session_state.last_audit_run_id = str(run_record.get("run_id", ""))
@@ -836,7 +923,8 @@ div[data-testid="stAlert"] {
                 msa_consistency=msa_consistency if isinstance(msa_consistency, dict) else {},
                 policy_compliance=policy_compliance if isinstance(policy_compliance, dict) else {},
             )
-            score = round(sum(float(r.get("Score contribution", 0) or 0) for r in score_rows), 0)
+            score_raw = sum(float(r.get("Score contribution", 0) or 0) for r in score_rows)
+            score = round(score_raw, 0)
             system_go_ahead = all(str(r.get("Status", "RED")).upper() == "PASS" for r in score_rows)
             blocking_components = [
                 str(r.get("Component", ""))
@@ -860,7 +948,9 @@ div[data-testid="stAlert"] {
                 with st.container(border=True):
                     st.markdown("**Delivery Manager / Account Executive decision override**")
                     st.caption(
-                        "Only Data Quality is blocking go-ahead. Authorized approver may override to proceed."
+                        "Only Data Quality is blocking go-ahead. Authorized approver may override to proceed "
+                        "only if the **consolidated score is greater than 83%** — then Executive GO-Ahead becomes PASS "
+                        "and the SOW text is archived under `knowledge_base/approved_sow/` for future RAG retrieval."
                     )
                     st.checkbox(
                         "Proceed despite Data Quality RED",
@@ -881,9 +971,19 @@ div[data-testid="stAlert"] {
             manual_override_applied = bool(
                 st.session_state.get("manual_go_ahead_override") and override_eligible
             )
-            effective_go_ahead = system_go_ahead or manual_override_applied
+            if system_go_ahead:
+                effective_go_ahead = True
+            elif manual_override_applied:
+                effective_go_ahead = float(score_raw) > 83.0
+            else:
+                effective_go_ahead = False
             if manual_override_applied:
-                m3.metric("Executive GO-Ahead", "🟢 PASS (Manual Override)")
+                m3.metric(
+                    "Executive GO-Ahead",
+                    "🟢 PASS (Manual Override)"
+                    if effective_go_ahead
+                    else f"🔴 RED (need score > 83%; current {score_raw:.1f}%)",
+                )
             else:
                 m3.metric("Executive GO-Ahead", _tl_emoji("PASS" if effective_go_ahead else "RED"))
 
@@ -897,6 +997,101 @@ div[data-testid="stAlert"] {
                     "go_ahead_override_actor": str(st.session_state.get("manual_go_ahead_actor", "") or ""),
                     "last_run_crewai": now_iso_utc(),
                 },
+            )
+
+            run_id_hist = str(st.session_state.get("last_audit_run_id", "") or "")
+            if run_id_hist and effective_go_ahead and st.session_state.get("rag_archive_done_run_id") != run_id_hist:
+                arch_text = (st.session_state.insights_sow_plaintext or "").strip()
+                rb = st.session_state.redacted_buf
+                if rb is not None:
+                    try:
+                        arch_text = read_docx_text(rb.getvalue()).strip()
+                    except Exception:
+                        pass
+                if arch_text:
+                    try:
+                        apath = archive_approved_sow_text(
+                            ROOT,
+                            run_id=run_id_hist,
+                            sow_name=st.session_state.sow_name or "sow",
+                            text=arch_text,
+                            consolidated_score=float(score_raw),
+                            system_go_ahead=bool(system_go_ahead),
+                            effective_go_ahead=bool(effective_go_ahead),
+                            override_applied=bool(manual_override_applied),
+                        )
+                        if apath:
+                            st.session_state.rag_archive_done_run_id = run_id_hist
+                            update_run_history_entry(
+                                run_id_hist,
+                                {
+                                    "approved_sow_archive_path": apath,
+                                    "rag_corpus_fingerprint": str(
+                                        st.session_state.get("rag_corpus_fingerprint") or ""
+                                    ),
+                                },
+                            )
+                            if st.session_state.get("_rag_archive_notice_path") != apath:
+                                st.session_state._rag_archive_notice_path = apath
+                                st.success(f"Approved SOW archived for RAG: `{apath}`")
+                    except OSError as oe:
+                        st.warning(f"Could not archive approved SOW: {oe}")
+
+            with st.expander("Retrieval & citations (lexical RAG)", expanded=False):
+                fp_disp = str(st.session_state.get("rag_corpus_fingerprint") or "")
+                st.caption(
+                    f"Corpus fingerprint: `{fp_disp}` — lexical scores are TF-IDF cosine similarity, not probabilities."
+                )
+                rmap = st.session_state.get("rag_retrieval_by_step") or {}
+                if not rmap:
+                    st.info("No retrieval index for this session yet — run Insights.")
+                else:
+                    for step, rows in rmap.items():
+                        st.markdown(f"**{step}**")
+                        if isinstance(rows, list) and rows:
+                            st.dataframe(rows, use_container_width=True, hide_index=True)
+                        else:
+                            st.caption("No chunks retrieved for this query.")
+                ev2 = a2.get("evidence_sources") if isinstance(a2.get("evidence_sources"), list) else []
+                if ev2:
+                    st.markdown("**Model-cited sources (Agent 2 — process circle)**")
+                    st.dataframe(
+                        [x for x in ev2 if isinstance(x, dict)][:20],
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+                mavca_ev = (
+                    mavca_for_score.get("evidence_sources")
+                    if isinstance(mavca_for_score.get("evidence_sources"), list)
+                    else []
+                )
+                if mavca_ev:
+                    st.markdown("**Model-cited sources (MAVCA)**")
+                    st.dataframe(
+                        [x for x in mavca_ev if isinstance(x, dict)][:20],
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+
+            report_payload = {
+                "run_id": str(st.session_state.get("last_audit_run_id", "") or ""),
+                "consolidated_score": score_raw,
+                "system_go_ahead": system_go_ahead,
+                "effective_go_ahead": effective_go_ahead,
+                "manual_override_applied": manual_override_applied,
+                "rag_corpus_fingerprint": str(st.session_state.get("rag_corpus_fingerprint") or ""),
+                "rag_retrieval": st.session_state.get("rag_retrieval_by_step") or {},
+                "agent2": a2,
+                "mavca": mavca_for_score,
+                "msa": msa_consistency,
+                "po": po_consistency,
+            }
+            st.download_button(
+                label="Download audit evidence bundle (JSON)",
+                data=json.dumps(report_payload, indent=2, default=str),
+                file_name=f"sow_audit_evidence_{st.session_state.get('last_audit_run_id', 'run')[:8]}.json",
+                mime="application/json",
+                key="download_audit_evidence_json",
             )
 
             st.divider()
@@ -1037,6 +1232,15 @@ div[data-testid="stAlert"] {
                     st.write("\n".join(f"- Add explicit SOW language for: {str(x)}" for x in missing[:10]))
                 elif a2_status == "PASS":
                     st.success("Required circle deliverables and guardrails are covered.")
+                pc_rag = (st.session_state.get("rag_retrieval_by_step") or {}).get("process_circle") or []
+                if isinstance(pc_rag, list) and pc_rag:
+                    st.markdown("**Retrieved evidence (this run)**")
+                    st.caption("Rule-based / lexical — not model-generated citations.")
+                    st.dataframe(pc_rag, use_container_width=True, hide_index=True)
+                evs2 = a2.get("evidence_sources") if isinstance(a2.get("evidence_sources"), list) else []
+                if evs2:
+                    st.markdown("**Model-cited evidence sources**")
+                    st.dataframe([x for x in evs2 if isinstance(x, dict)][:15], use_container_width=True, hide_index=True)
 
             with st.expander("Executive summary", expanded=False):
                 st.caption("Leadership-facing synthesis of the checks above.")
@@ -1105,6 +1309,14 @@ div[data-testid="stAlert"] {
                                 }
                             )
                         st.dataframe(shift_rows, use_container_width=True, hide_index=True)
+                    mv_rag = (st.session_state.get("rag_retrieval_by_step") or {}).get("mavca") or []
+                    if isinstance(mv_rag, list) and mv_rag:
+                        st.markdown("**Retrieved evidence (this run)**")
+                        st.dataframe(mv_rag, use_container_width=True, hide_index=True)
+                    mev = mavca.get("evidence_sources") if isinstance(mavca.get("evidence_sources"), list) else []
+                    if mev:
+                        st.markdown("**Model-cited evidence sources**")
+                        st.dataframe([x for x in mev if isinstance(x, dict)][:15], use_container_width=True, hide_index=True)
 
             with st.expander("MSA consistency — contract alignment", expanded=False):
                 if not msa_consistency:
@@ -1119,6 +1331,10 @@ div[data-testid="stAlert"] {
                     )
                     st.write("Status:", _tl_emoji(msa_status))
                     st.write(str(msa_consistency.get("summary", "")))
+                    rev_msa = msa_consistency.get("retrieved_evidence")
+                    if isinstance(rev_msa, list) and rev_msa:
+                        st.markdown("**Retrieved MSA / legal context (lexical)**")
+                        st.dataframe(rev_msa, use_container_width=True, hide_index=True)
                     conflicts = (
                         msa_consistency.get("conflicts")
                         if isinstance(msa_consistency.get("conflicts"), list)
@@ -1137,7 +1353,7 @@ div[data-testid="stAlert"] {
                                     "- "
                                     + str(c.get("topic", "Contract topic"))
                                     + ": "
-                                    + str(c.get("issue", "Review required"))
+                                    + str(c.get("why", "Review required"))
                                 )
                     if review_flags:
                         st.markdown("**Review flags**")
@@ -1158,6 +1374,10 @@ div[data-testid="stAlert"] {
                     )
                     st.write("Status:", _tl_emoji(po_status))
                     st.write(str(po_consistency.get("summary", "")))
+                    rev_po = po_consistency.get("retrieved_evidence")
+                    if isinstance(rev_po, list) and rev_po:
+                        st.markdown("**Retrieved PO / commercial context (lexical)**")
+                        st.dataframe(rev_po, use_container_width=True, hide_index=True)
                     cs = (
                         po_consistency.get("commercial_summary")
                         if isinstance(po_consistency.get("commercial_summary"), dict)
@@ -1345,13 +1565,21 @@ div[data-testid="stAlert"] {
                 st.info(str(summary))
 
             if score > 0 and not effective_go_ahead:
-                st.warning(
-                    "Score reflects partial passes across all weighted controls. "
-                    "Executive GO-Ahead requires every scored control to be PASS."
-                )
-            elif manual_override_applied:
+                if manual_override_applied and float(score_raw) <= 83.0:
+                    st.warning(
+                        "Override is selected, but the consolidated score must be **greater than 83%** "
+                        "for Executive GO-Ahead PASS when Data Quality is the only blocking control."
+                    )
+                else:
+                    st.warning(
+                        "Score reflects partial passes across weighted controls. "
+                        "Executive GO-Ahead requires every scored control to be PASS, "
+                        "or an eligible Data Quality override with score > 83%."
+                    )
+            elif manual_override_applied and effective_go_ahead:
                 st.info(
-                    "Executive GO-Ahead is PASS via manual override. Data Quality remains RED and requires follow-up."
+                    "Executive GO-Ahead is PASS via manual override (Data Quality RED; consolidated score > 83%). "
+                    "Follow up on data quality; approved SOW text is archived for future RAG when archiving succeeded."
                 )
             with st.expander("Explain score"):
                 weighted_rows = [

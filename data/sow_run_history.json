@@ -2900,5 +2900,220 @@
     "go_ahead_override_reason": "",
     "go_ahead_override_actor": "",
     "last_run_crewai": "2026-04-21T13:23:22.525510+00:00"
+  },
+  {
+    "run_id": "0f41a835-1d8e-4304-b6e9-69eae62336c8",
+    "record_type": "phase1b_mavca",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "",
+    "sow_ready_score": 92.0,
+    "last_run_crewai": "2026-05-14T16:03:32.016526+00:00",
+    "mavca_output": {
+      "tasks": [
+        {
+          "task_id": "T1",
+          "task_name": "Conduct Targeted Reliability Assessment",
+          "description": "The team will conduct a targeted reliability assessment and optimization of the existing data infrastructure, focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to analyze and optimize the data infrastructure. The team will utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage. The use of AI-powered tools to analyze and optimize the infrastructure justifies an Augmented MAVCA level.",
+          "sow_evidence": "Scope of Services: Vendor will deploy a specialized task force of 4 Site Reliability Engineers (SREs). The team will conduct a targeted reliability assessment and optimization of the existing data infrastructure (specifically focusing on Airflow DAG performance, dbt Cloud execution times, and Snowflake resource allocation)."
+        },
+        {
+          "task_id": "T2",
+          "task_name": "Implement Observability Alerts",
+          "description": "Implementation of observability alerts for pipeline failures and latency bottlenecks.",
+          "mavca_level": "Validated",
+          "rationale": "This task requires the implementation of alerts to detect pipeline failures and latency bottlenecks. The use of validated tools and processes to implement these alerts justifies a Validated MAVCA level.",
+          "sow_evidence": "Scope of Services: Implementation of observability alerts for pipeline failures and latency bottlenecks."
+        },
+        {
+          "task_id": "T3",
+          "task_name": "Maintain AI Hygiene Guardrails",
+          "description": "Crucially, Vendor operations will maintain strict adherence to AI Hygiene Guardrails. All Vendor SREs will utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires the maintenance of AI Hygiene Guardrails to ensure data privacy, code security, and ethical tool usage. The use of curated processes and tools to maintain these guardrails justifies a Curated MAVCA level.",
+          "sow_evidence": "Governance: Crucially, Vendor operations will maintain strict adherence to AI Hygiene Guardrails. All Vendor SREs will utilize isolated, enterprise-approved AI environments to guarantee data privacy, code security, and ethical tool usage throughout the advisory period."
+        },
+        {
+          "task_id": "T4",
+          "task_name": "Conduct Pre-Kickoff Compliance Gate",
+          "description": "Managers shall run Automated Compliance Scanning prior to the formal project kickoff meeting.",
+          "mavca_level": "Autonomous",
+          "rationale": "This task requires the use of automated tools to conduct compliance scanning, which justifies an Autonomous MAVCA level.",
+          "sow_evidence": "Pre-Kickoff Compliance Gate (Mandatory): Managers shall run Automated Compliance Scanning prior to the formal project kickoff meeting."
+        },
+        {
+          "task_id": "T5",
+          "task_name": "Deliver Comprehensive Infrastructure Reliability Assessment Report",
+          "description": "Comprehensive Infrastructure Reliability Assessment Report.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires the delivery of a report, which is a manual task. However, the use of AI-powered tools to analyze and optimize the infrastructure could potentially shift the MAVCA level to Augmented.",
+          "sow_evidence": "Deliverables: Comprehensive Infrastructure Reliability Assessment Report."
+        },
+        {
+          "task_id": "T6",
+          "task_name": "Refactor and Optimize Configuration Files",
+          "description": "Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models.",
+          "mavca_level": "Augmented",
+          "rationale": "This task requires the use of specialized tools and expertise to refactor and optimize configuration files. The use of AI-powered tools to analyze and optimize the configuration files justifies an Augmented MAVCA level.",
+          "sow_evidence": "Deliverables: Refactored and optimized configuration files for high-priority Airflow DAGs and dbt models."
+        },
+        {
+          "task_id": "T7",
+          "task_name": "Document AI Hygiene Guardrails Framework",
+          "description": "A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants, ensuring proprietary pipeline logic remains secure.",
+          "mavca_level": "Curated",
+          "rationale": "This task requires the documentation of AI Hygiene Guardrails framework, which is a curated process. The use of curated processes and tools to document the framework justifies a Curated MAVCA level.",
+          "sow_evidence": "Deliverables: A documented AI Hygiene Guardrails framework tailored for the engineering team's use of coding assistants, ensuring proprietary pipeline logic remains secure."
+        },
+        {
+          "task_id": "T8",
+          "task_name": "Final Handover Readout",
+          "description": "Final handover readout at the end of week 4.",
+          "mavca_level": "Manual",
+          "rationale": "This task requires the delivery of a final handover readout, which is a manual task.",
+          "sow_evidence": "Deliverables: Final handover readout at the end of week 4."
+        }
+      ],
+      "classification_shifts": [
+        {
+          "task_id": "T5",
+          "constraint_assumption": "Use of AI-powered tools to analyze and optimize the infrastructure",
+          "new_mavca_level": "Augmented",
+          "why": "The use of AI-powered tools to analyze and optimize the infrastructure could potentially shift the MAVCA level from Manual to Augmented."
+        },
+        {
+          "task_id": "T6",
+          "constraint_assumption": "Use of automated tools to refactor and optimize configuration files",
+          "new_mavca_level": "Validated",
+          "why": "The use of automated tools to refactor and optimize configuration files could potentially shift the MAVCA level from Augmented to Validated."
+        }
+      ],
+      "summary": "The project involves a short-term, specialized technical advisory to stabilize and optimize the client's core data orchestration and transformation workflows. The project is classified under the Gamma Circle, prioritizing rapid, ad-hoc consulting with a focus on system reliability. The tasks involved in the project require a range of MAVCA levels, from Manual to Autonomous, depending on the use of specialized tools and expertise, automated processes, and curated frameworks.",
+      "status": "PASS",
+      "schema_status": "PASS",
+      "schema_errors": [],
+      "evidence_sources": [
+        {
+          "source": "SOW",
+          "chunk_id": "Scope of Services",
+          "excerpt": "Vendor will deploy a specialized task force of 4 Site Reliability Engineers (SREs).",
+          "reason": "This excerpt provides evidence for the task 'Conduct Targeted Reliability Assessment' and justifies the Augmented MAVCA level."
+        },
+        {
+          "source": "SOW",
+          "chunk_id": "Governance",
+          "excerpt": "Crucially, Vendor operations will maintain strict adherence to AI Hygiene Guardrails.",
+          "reason": "This excerpt provides evidence for the task 'Maintain AI Hygiene Guardrails' and justifies the Curated MAVCA level."
+        }
+      ]
+    },
+    "phase1b_gate_result": {
+      "gate_name": "task_intelligence_gate",
+      "status": "RED",
+      "score": 92.0,
+      "missing_criteria": [
+        "Task 8 rationale too short; provide 2-3 sentences."
+      ],
+      "evidence": [
+        "tasks_count=8",
+        "classification_shifts_count=2"
+      ],
+      "rules": [
+        {
+          "rule": "schema_validation",
+          "passed": true,
+          "details": "Output matches expected schema"
+        },
+        {
+          "rule": "task_count_8_to_10",
+          "passed": true,
+          "details": "tasks_count=8"
+        },
+        {
+          "rule": "task_field_quality",
+          "passed": false,
+          "details": "Each task includes IDs, valid MAVCA level, rationale, and evidence."
+        },
+        {
+          "rule": "classification_shift_count_min_2",
+          "passed": true,
+          "details": "classification_shifts_count=2"
+        },
+        {
+          "rule": "classification_shift_quality",
+          "passed": true,
+          "details": "Shift scenarios reference valid tasks/levels with clear rationale."
+        }
+      ]
+    },
+    "phase1b_tasks_count": 8,
+    "phase1b_shift_count": 2,
+    "phase1b_status": "PASS",
+    "phase1b_gate_status": "RED"
+  },
+  {
+    "run_id": "e2f89c37-46e8-49cd-97ce-ac910bf804f9",
+    "record_type": "audit",
+    "sow_name_file": "SRE-Project_Oasis_Pipeline Reliability Advisory_v1_2026.docx",
+    "project_name": "Pipeline Reliability Advisory SOW",
+    "timeline_raw": "The term of this SOW will begin on the SOW Effective Date and continue through Jan 30th, 2026 till March 31st 2026. unless otherwise terminated.",
+    "timeline_end_iso": "2026-03-31",
+    "estimated_contract_value": "$60,000",
+    "estimated_contract_value_numeric": 60000.0,
+    "circle": "Gamma",
+    "sow_ready_score": 100.0,
+    "msa_consistency_status": "PASS",
+    "po_consistency_status": "PASS",
+    "po_conflict_count": 0,
+    "go_ahead_system": "RED",
+    "go_ahead_effective": "PASS",
+    "go_ahead_override_applied": true,
+    "go_ahead_override_reason": "",
+    "go_ahead_override_actor": "",
+    "last_run_crewai": "2026-05-14T16:04:06.913264+00:00",
+    "rag_corpus_fingerprint": "8b7e37f6543a60c2",
+    "rag_chunk_ids_by_step": {
+      "process_circle": [
+        "knowledge_base_process_circles_md-0002",
+        "knowledge_base_process_circles_md-0001",
+        "knowledge_base_process_circles_md-0000",
+        "knowledge_base_process_circles_md-0003",
+        "uploaded_msa-0002",
+        "uploaded_msa-0001",
+        "SRE_Project_Oasis_Pipeline_Reliability_Advisory_-0001",
+        "uploaded_ethics_manual-0001"
+      ],
+      "mavca": [
+        "uploaded_ethics_manual-0000",
+        "knowledge_base_process_circles_md-0002",
+        "knowledge_base_process_circles_md-0001",
+        "uploaded_msa-0002",
+        "knowledge_base_process_circles_md-0003",
+        "knowledge_base_process_circles_md-0000",
+        "SRE_Project_Oasis_Pipeline_Reliability_Advisory_-0002",
+        "SRE_Project_Oasis_Pipeline_Reliability_Advisory_-0000"
+      ],
+      "msa": [
+        "SRE_Project_Oasis_Pipeline_Reliability_Advisory_-0002",
+        "uploaded_msa-0004",
+        "uploaded_msa-0003",
+        "uploaded_msa-0001",
+        "uploaded_msa-0002"
+      ],
+      "po": [
+        "uploaded_po-0000",
+        "SRE_Project_Oasis_Pipeline_Reliability_Advisory_-0004",
+        "uploaded_msa-0002",
+        "SRE_Project_Oasis_Pipeline_Reliability_Advisory_-0003",
+        "uploaded_msa-0000"
+      ]
+    },
+    "approved_sow_archive_path": "knowledge_base/approved_sow/20260514T160406Z_e2f89c37_SRE-Project_Oasis_Pipeline_Reliability_Advisory_v1_2026.md"
   }
 ]

@@ -110,6 +110,9 @@ def enforce_mavca_schema(raw_output: dict[str, Any]) -> dict[str, Any]:
         "schema_status": "PASS" if not schema_errors else "RED",
         "schema_errors": schema_errors,
     }
+    evs = out.get("evidence_sources")
+    if isinstance(evs, list):
+        normalized["evidence_sources"] = evs
     return normalized
 
 
@@ -240,6 +243,7 @@ def run_mavca_decomposition(
     kb_text: str | None = None,
     ethics_text: str | None = None,
     progress: Callable[[str], None] | None = None,
+    retrieved_governance: str | None = None,
 ) -> dict[str, Any]:
     """Generate Deliverable 1B (MAVCA decomposition) from SOW + references."""
     sow = _truncate(sow_text)
@@ -271,8 +275,13 @@ def run_mavca_decomposition(
             f'"""\n{ethics}\n"""\n'
         )
 
+    retrieval_block = ""
+    if (retrieved_governance or "").strip():
+        retrieval_block = (retrieved_governance or "").strip() + "\n\n"
+
     task = Task(
         description=(
+            f"{retrieval_block}"
             "Create a business-ready task decomposition and MAVCA classification.\n"
             "Requirements:\n"
             "1) Extract 8-10 concrete tasks/workflows from the SOW.\n"
@@ -304,8 +313,17 @@ def run_mavca_decomposition(
             "    }\n"
             "  ],\n"
             '  "summary": "...",\n'
-            '  "status": "PASS"|"RED"\n'
+            '  "status": "PASS"|"RED",\n'
+            '  "evidence_sources": [\n'
+            "    {\n"
+            '      "source": "label",\n'
+            '      "chunk_id": "id from RETRIEVED block if used",\n'
+            '      "excerpt": "short excerpt",\n'
+            '      "reason": "why this source mattered"\n'
+            "    }\n"
+            "  ]\n"
             "}\n"
+            "evidence_sources is optional; include only when grounded in RETRIEVED GOVERNANCE EVIDENCE.\n"
         ),
         expected_output="Strict JSON with tasks, classification_shifts, summary, status.",
         agent=agent,
