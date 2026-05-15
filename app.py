@@ -26,7 +26,8 @@ from env_config import (
 load_dotenv_and_resolve()
 
 from audit_crew import run_audit_crew, run_remediation_crew
-from approved_sow_archive import archive_approved_sow_text
+from approved_sow_archive import archive_approved_sow_text, sanitize_filename_base
+from report_pdf import build_audit_report_pdf_bytes
 from phase_agents import (
     run_data_quality_precheck,
     run_mavca_decomposition,
@@ -352,6 +353,60 @@ def _build_run_record(sow_name_file: str, sow_text: str, audit_result: dict[str,
         if opt_key in audit_result:
             row[opt_key] = audit_result[opt_key]
     return row
+
+
+def _build_full_report_payload(
+    *,
+    result: dict[str, Any],
+    dq: dict[str, Any],
+    sow_name: str,
+    sow_text: str,
+    score_rows: list[dict[str, Any]],
+    score_raw: float,
+    system_go_ahead: bool,
+    effective_go_ahead: bool,
+    manual_override_applied: bool,
+    override_actor: str,
+    override_reason: str,
+    msa_consistency: dict[str, Any],
+    po_consistency: dict[str, Any],
+    mavca: dict[str, Any],
+) -> dict[str, Any]:
+    """Consolidated dict for JSON and PDF audit exports."""
+    return {
+        "metadata": {
+            "run_id": str(st.session_state.get("last_audit_run_id", "") or ""),
+            "project_name": extract_project_name_from_sow(sow_text, fallback=sow_name),
+            "sow_name_file": sow_name,
+            "generated_at": now_iso_utc(),
+            "consolidated_score": round(float(score_raw), 2),
+            "dq_status": str((dq or {}).get("status", "")),
+            "system_go_ahead": "PASS" if system_go_ahead else "RED",
+            "effective_go_ahead": "PASS" if effective_go_ahead else "RED",
+            "manual_override_applied": manual_override_applied,
+            "override_actor": override_actor,
+            "override_reason": override_reason,
+            "approved_sow_archive_path": str(st.session_state.get("_rag_archive_notice_path", "") or ""),
+        },
+        "executive_summary": str(result.get("summary", "") or ""),
+        "score_rows": score_rows,
+        "data_quality": dq if isinstance(dq, dict) else {},
+        "agent1": result.get("agent1") if isinstance(result.get("agent1"), dict) else {},
+        "agent2": result.get("agent2") if isinstance(result.get("agent2"), dict) else {},
+        "agent3": result.get("agent3") if isinstance(result.get("agent3"), dict) else {},
+        "policy_compliance": (
+            result.get("policy_compliance") if isinstance(result.get("policy_compliance"), dict) else {}
+        ),
+        "msa": msa_consistency,
+        "po": po_consistency,
+        "mavca": mavca,
+        "consolidated_score": score_raw,
+        "system_go_ahead": system_go_ahead,
+        "effective_go_ahead": effective_go_ahead,
+        "manual_override_applied": manual_override_applied,
+        "rag_corpus_fingerprint": str(st.session_state.get("rag_corpus_fingerprint") or ""),
+        "rag_retrieval": st.session_state.get("rag_retrieval_by_step") or {},
+    }
 
 
 def _build_phase1b_run_record(
@@ -1073,26 +1128,57 @@ div[data-testid="stAlert"] {
                         hide_index=True,
                     )
 
-            report_payload = {
-                "run_id": str(st.session_state.get("last_audit_run_id", "") or ""),
-                "consolidated_score": score_raw,
-                "system_go_ahead": system_go_ahead,
-                "effective_go_ahead": effective_go_ahead,
-                "manual_override_applied": manual_override_applied,
-                "rag_corpus_fingerprint": str(st.session_state.get("rag_corpus_fingerprint") or ""),
-                "rag_retrieval": st.session_state.get("rag_retrieval_by_step") or {},
-                "agent2": a2,
-                "mavca": mavca_for_score,
-                "msa": msa_consistency,
-                "po": po_consistency,
-            }
-            st.download_button(
-                label="Download audit evidence bundle (JSON)",
-                data=json.dumps(report_payload, indent=2, default=str),
-                file_name=f"sow_audit_evidence_{st.session_state.get('last_audit_run_id', 'run')[:8]}.json",
-                mime="application/json",
-                key="download_audit_evidence_json",
+            sow_plain = str(st.session_state.get("insights_sow_plaintext") or "")
+            full_report = _build_full_report_payload(
+                result=result,
+                dq=dq if isinstance(dq, dict) else {},
+                sow_name=st.session_state.sow_name or "",
+                sow_text=sow_plain,
+                score_rows=score_rows,
+                score_raw=score_raw,
+                system_go_ahead=system_go_ahead,
+                effective_go_ahead=effective_go_ahead,
+                manual_override_applied=manual_override_applied,
+                override_actor=str(st.session_state.get("manual_go_ahead_actor", "") or ""),
+                override_reason=str(st.session_state.get("manual_go_ahead_reason", "") or ""),
+                msa_consistency=msa_consistency if isinstance(msa_consistency, dict) else {},
+                po_consistency=po_consistency if isinstance(po_consistency, dict) else {},
+                mavca=mavca_for_score,
             )
+            run_tag = str(st.session_state.get("last_audit_run_id", "run") or "run")[:8]
+            proj_slug = sanitize_filename_base(
+                str(full_report.get("metadata", {}).get("project_name", "") or "sow")
+            )
+
+            st.markdown("**Export results**")
+            col_json, col_pdf = st.columns(2)
+            with col_json:
+                st.download_button(
+                    label="Download audit evidence (JSON)",
+                    data=json.dumps(full_report, indent=2, default=str),
+                    file_name=f"sow_audit_evidence_{run_tag}.json",
+                    mime="application/json",
+                    key="download_audit_evidence_json",
+                    disabled=not insights_done,
+                )
+            with col_pdf:
+                pdf_bytes: bytes | None = None
+                pdf_error = ""
+                try:
+                    pdf_bytes = build_audit_report_pdf_bytes(full_report)
+                except Exception as pdf_exc:
+                    pdf_error = str(pdf_exc)
+                st.download_button(
+                    label="Download full audit report (PDF)",
+                    data=pdf_bytes or b"",
+                    file_name=f"sow_audit_report_{run_tag}_{proj_slug}.pdf",
+                    mime="application/pdf",
+                    key="download_audit_report_pdf",
+                    disabled=not insights_done or pdf_bytes is None,
+                    help="Available after a successful Insights run.",
+                )
+                if pdf_error:
+                    st.caption(f"PDF generation failed: {pdf_error}")
 
             st.divider()
             st.markdown("**Deep Dive (click to expand)**")
