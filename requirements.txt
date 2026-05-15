@@ -7,3 +7,4 @@ docx2txt>=0.8
 python-dotenv>=1.0.0
 pypdf>=5.0.0
 certifi>=2024.0.0
+scikit-learn>=1.4.0
